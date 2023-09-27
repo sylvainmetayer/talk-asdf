@@ -1,0 +1,7 @@
+# IDE
+.idea
+.vscode
+
+slides/node_modules
+slides/dist/
+slides/revealjs_data/dist/
