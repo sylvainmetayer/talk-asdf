@@ -29,5 +29,4 @@ TODO : Logo asdf
 1. Installation
 2. Concepts
 3. Usage
-4. Local / Global
-5. Création d'un plugin
+4. Création d'un plugin

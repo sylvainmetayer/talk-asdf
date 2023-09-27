@@ -2,6 +2,12 @@
 
 ,,,
 
+# Pour aller plus loin
+
+<https://asdf-vm.com/>
+
+,,,
+
 # Merci !
 
 Openfeedback <!-- .element: class="float_left" --> <img src="assets/img/openfeedback.png"  height="400" width="400" alt="QR code Openfeedback">

@@ -1,3 +1,3 @@
 # Installation
 
-TODO
+TODO curl + update bashrc
