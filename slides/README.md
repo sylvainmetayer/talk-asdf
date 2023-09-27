@@ -11,6 +11,8 @@
 
 - <https://github.com/asdf-community/asdf-hashicorp>
 - <https://github.com/asdf-vm/asdf>
+- <https://github.com/jdx/rtx>
+- <https://devenv.sh/reference/options/>
 
 ## Références
 
