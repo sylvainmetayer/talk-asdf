@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>asdf, un outil pour toutes vos versions</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+    <style>
+      li img {
+        list-style-type: none;
+      }
+    </style>
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-timing="20">
+          <img src="assets/img/sunny_logo.png" alt="Logo SunnyTech" id="sunny_logo">
+          <h1 id="main_title">asdf, un outil pour toutes vos versions</h1>
+          <p><a href="https://twitter.com/sylvain_metayer">@sylvain_metayer</a>
+          </p>
+        </section>
+        <section
+          data-timing="60"
+          data-markdown="assets/pages/0-intro.md"
+          data-separator="^---"
+          data-separator-vertical="^,,,"
+          data-separator-notes="^speaker:"
+          data-charset="utf-8"></section>
+        </section>
+        <section
+          data-timing="120"
+          data-markdown="assets/pages/1-installation.md"
+          data-separator="^---"
+          data-separator-vertical="^,,,"
+          data-separator-notes="^speaker:"
+          data-charset="utf-8"></section>
+          <section
+          data-timing="60"
+          data-markdown="assets/pages/6-conclusion.md"
+          data-separator="^---"
+          data-separator-vertical="^,,,"
+          data-separator-notes="^speaker:"
+          data-charset="utf-8"></section>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Display presentation control arrows
+        controls: true,
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+        // Display a presentation progress bar
+        progress: true,
+        totalTime: 20 * 60,
+        slideNumber: 'c/t',
+        pdfMaxPagesPerSlide: 1,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
