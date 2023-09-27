@@ -9,8 +9,8 @@
 
 ## TODO / Liens à l'arrache
 
-<https://github.com/asdf-community/asdf-hashicorp>
-
+- <https://github.com/asdf-community/asdf-hashicorp>
+- <https://github.com/asdf-vm/asdf>
 
 ## Références
 
