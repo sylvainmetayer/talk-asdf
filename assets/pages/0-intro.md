@@ -14,6 +14,12 @@ TODO : Image avec plein d'outil et leur versions différentes
 
 ,,,
 
+```bash
+$ ./0-error.sh
+```
+
+,,,
+
 # Solution
 
 TODO : spoiler...
