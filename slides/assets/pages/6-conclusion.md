@@ -1,10 +1,11 @@
-# Conclusion
-
-,,,
-
-# Pour aller plus loin
+## Pour aller plus loin
 
 <https://asdf-vm.com/>
+
+|Alternatives - Projets similaires||
+|---|---|
+|<https://github.com/jdx/rtx>|🦀|
+|<https://devenv.sh>|#nix|
 
 ,,,
 

@@ -29,3 +29,6 @@ kubernetes
 cluster
 terraform
 ansible
+commit / committer
+gitignore
+home directory / répertoire utlisateur
