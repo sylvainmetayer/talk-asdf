@@ -147,3 +147,7 @@ printf "%s\n" "$version"
 ## Testons ça
 
 <https://github.com/sylvainmetayer/asdf-ytt>
+
+```bash
+$ ./2-plugin-demo.sh
+```

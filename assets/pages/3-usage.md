@@ -1,4 +1,4 @@
-## Démo Usage
+## Démo
 
 ```bash
 $ ./1-usage.sh

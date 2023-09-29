@@ -21,11 +21,23 @@ speaker:
 
 Définit les versions souhaitées d'un ou plusieurs outil(s).
 
+On peut/doit commit ce fichier au même titre que le gitignore
+
 ,,,
 
 ## Local vs Global
 
 TODO : image carte
+
+,,,
+
+## Installation d'une version
+
+```shell
+asdf install <plugin> <version>
+asdf install nodejs 14.21.3
+asdf install
+```
 
 ,,,
 
@@ -46,14 +58,4 @@ TODO : image carte
 ```bash
 $ asdf global <outil> <version>
 $ asdf local <outil> version>
-```
-
-,,,
-
-## Installation d'une version
-
-```shell
-asdf install <plugin> <version>
-asdf install nodejs 14.21.3
-asdf install
 ```
