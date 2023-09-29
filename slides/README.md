@@ -14,6 +14,10 @@
 - <https://github.com/jdx/rtx>
 - <https://devenv.sh/reference/options/>
 
+Couleurs :
+
+#FAEFB2 / #0E1324
+
 ## Références
 
 Images

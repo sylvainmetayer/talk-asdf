@@ -12,3 +12,6 @@
 - bashrc (fichier de configuration)
 - curl ( = cURL)
 - $HOME
+- tool-versions
+- cat (instruction pour afficher le contenu d'un fichier)
+- tree (affichage sous forme d'arborescence des fichiers)
