@@ -111,19 +111,29 @@ Be cool kid image
 
 ,,,
 
-```bash [2|5-8]
+```bash []
 # bin/latest-stable
 redirect_url=$(curl "${curl_opts[@]}" "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
+```
+
+```bash [4]
+$ curl "$GH_REPO/releases/latest"
+HTTP/2 302
+server: GitHub.com
+location: https://github.com/carvel-dev/ytt/releases/tag/v0.46.0
+```
+
+,,,
+
+```bash [3-6]
 version=
 printf "redirect url: %s\n" "$redirect_url" >&2
 if [[ "$redirect_url" == "$GH_REPO/releases" ]]; then
-	version="$(list_all_versions | sort_versions | tail -n1 | xargs echo)"
+ version="$(list_all_versions | sort_versions | tail -n1 | xargs echo)"
 else
-	version="$(printf "%s\n" "$redirect_url" | sed 's|.*/tag/v\{0,1\}||')"
+ version="$(printf "%s\n" "$redirect_url" | sed 's|.*/tag/v\{0,1\}||')"
 fi
-
 printf "%s\n" "$version"
-
 ```
 
 ,,,

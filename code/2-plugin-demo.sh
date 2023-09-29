@@ -3,6 +3,8 @@
 source ./.demo-magic.sh -d || exit 1
 clear
 
+source ~/.bashrc
+
 pe 'asdf plugin test ytt https://github.com/sylvainmetayer/asdf-ytt.git "ytt --version"'
 
 pei 'asdf plugin add ytt https://github.com/sylvainmetayer/asdf-ytt.git'

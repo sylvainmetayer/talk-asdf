@@ -1,25 +1,25 @@
-# Concepts
-
-,,,
-
 ## Plugins
-
-Permet l'installation d'un plugin pour gérer les versions d'un outil.
 
 ```shell
 asdf plugin-add <plugin-name> <optional-repo-url>
 ```
 
+speaker:
+
+Permet l'installation d'un plugin pour gérer les versions d'un outil.
+
 ,,,
 
 ## .tool-versions
-
-Définit les versions souhaitées d'un ou plusieurs outil(s).
 
 ```shell
 $ cat .tool-versions
 nodejs 14.21.3
 ```
+
+speaker:
+
+Définit les versions souhaitées d'un ou plusieurs outil(s).
 
 ,,,
 
@@ -27,8 +27,12 @@ nodejs 14.21.3
 
 TODO : image carte
 
+,,,
+
+## Local vs Global
+
 ```text
-./
+~/
 ├── slides/
 │   ├── assets/
 │   │   ├── code/
@@ -37,7 +41,11 @@ TODO : image carte
 │   │   │   └── node18/
 │   │   │       └── .tool-versions
 ├── .tool-versions
+```
 
+```bash
+$ asdf global <outil> <version>
+$ asdf local <outil> version>
 ```
 
 ,,,

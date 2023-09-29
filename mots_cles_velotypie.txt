@@ -1,0 +1,28 @@
+$HOME
+ansible
+asdf
+bash
+bashrc (fichier de configuration)
+cat (instruction pour afficher le contenu d'un fichier)
+cluster
+curl ( = cURL)
+devops
+header
+hook
+kubectl
+kubernetes
+location
+nodejs ( = node )
+nvm
+regex (expression régulière)
+releases
+shell
+tag
+tar.gz (fichier compressé)
+tech lead
+terraform
+tfenv
+tool-versions
+tree (affichage sous forme d'arborescence des fichiers)
+ytt
+zsh
