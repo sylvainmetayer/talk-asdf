@@ -2,10 +2,11 @@
 
 <https://asdf-vm.com/>
 
-|Alternatives - Projets similaires||
+<!-- |Alternatives - Projets similaires||
 |---|---|
 |<https://github.com/jdx/rtx>|🦀|
 |<https://devenv.sh>|#nix|
+-->
 
 ,,,
 

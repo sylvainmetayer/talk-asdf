@@ -107,10 +107,6 @@ list_all_versions | sort_versions | xargs echo
 
 `latest-stable`
 
-Be cool kid image
-
-,,,
-
 ```bash []
 # bin/latest-stable
 redirect_url=$(curl "${curl_opts[@]}" "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
