@@ -25,12 +25,6 @@ On peut/doit commit ce fichier au même titre que le gitignore
 
 ,,,
 
-## Local vs Global
-
-TODO : image carte
-
-,,,
-
 ## Installation d'une version
 
 ```shell
