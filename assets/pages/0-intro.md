@@ -4,8 +4,6 @@ Sylvain METAYER - Tech Lead ([sylvain.dev](https://sylvain.dev))
 
 <img src="assets/img/logo.png" alt="Logo onepoint" id="intro_logo_op">
 
-TODO Logo fond noir
-
 speaker: présentation plus orientée automatisation devops et que dans le cadre de mon boulot, à forcer d'automatiser tout pourquoi pas automatiser mon pc
 
 ,,,
