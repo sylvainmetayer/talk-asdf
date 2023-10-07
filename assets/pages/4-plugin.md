@@ -1,6 +1,6 @@
-## Création d'un plugin en 5min
+## Création d'un plugin en moins de 10min
 
-TODO Image montre en main
+<img src="assets/img/clock.webp" alt="Clock">
 
 ,,,
 

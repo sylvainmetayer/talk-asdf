@@ -10,7 +10,19 @@ speaker: présentation plus orientée automatisation devops et que dans le cadre
 
 # Problématique
 
-TODO : Image avec plein d'outil et leur versions différentes
+<video autoplay loop muted>
+  <source src="assets/img/so_many_of_them_lotr.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+speaker:
+
+Côté devops, et programmation de manières générale, pleins d'outils qui évolue parfois vite. Trop vite.
+
+Et on se retrouve avec des projets qui suivent niveau versions et d'autres qui restent sur des vieilles versions.
+
+Et il faut pourtant utiliser les 2
+
 
 ,,,
 
@@ -21,11 +33,6 @@ $ ./0-error.sh
 ,,,
 
 # Solution
-
-<!--
-TODO
-<img src="assets/img/asdf.png" alt="ASDF cowsay" id="asdf_cowsay">
--->
 
 ```shell
  ______
