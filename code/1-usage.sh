@@ -1,21 +1,25 @@
 #!/usr/bin/env bash
 
-source ./.demo-magic.sh -d || exit 1
+source ./.demo-magic.sh || exit 1
 clear
 
 source ~/.bashrc
 
-p "Installation d'un plugin"
+echo "Installation du plugin nodejs"
 
-pe 'asdf plugin add nodejs'
+p 'asdf plugin add nodejs'
 
 p "Lister les versions disponibles"
 
-pe 'asdf list-all nodejs'
+p 'asdf list-all nodejs'
 
-p 'Installation une version donnée'
+sleep 1 && cat cheats/asdf_list_all_nodejs.txt
 
-pei 'asdf install nodejs 14.21.3'
+p 'Installer une version spécifique'
+
+p 'asdf install nodejs 14.21.3'
+
+sleep 2 && cat cheats/asdf_install_node_14.txt
 
 p 'Lister les versions installées'
 
@@ -23,7 +27,9 @@ pei 'asdf list nodejs'
 
 p 'Pour ceux qui veulent la dernière version'
 
-pei 'asdf install nodejs latest'
+p 'asdf install nodejs latest'
+
+sleep 2 && cat cheats/asdf_install_node_latest.txt
 
 pei 'asdf global nodejs latest'
 
@@ -31,21 +37,24 @@ p 'Voyons voir si on peut lancer notre code'
 
 cd node14
 pwd
-rm .tool-versions || true
 
-p "J'ai quelle version actuellement ?"
+rm .tool-versions> /dev/null 2>/dev/null || true
+
+p "Quelle est la version actuellement définie ?"
 
 pei 'asdf current nodejs'
 
-p "Ce n'est pas la bonne, il me faut du node 14 ici !"
+pei 'node -v'
+
+p "Il nous faut du node 14 ici !"
 
 pei 'asdf local nodejs 14.21.3'
 
-pe 'asdf install'
+pei 'cat .tool-versions'
 
 pe 'npm start'
 
-rm .tool-versions || true
+rm .tool-versions> /dev/null 2>/dev/null || true
 
 p 'Et si on testait notre autre code sur une autre version ?'
 
@@ -53,4 +62,11 @@ cd ../node18
 pwd
 
 pe 'npm start'
+
+p 'Et avec du node 18 ?'
+
+pe 'asdf shell nodejs 18.18.0'
+
+pe 'npm start'
+
 p ""

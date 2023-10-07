@@ -8,4 +8,4 @@ $ ./1-usage.sh
 
 ## Et voilà !
 
-TODO Image meme rules them all
+<img src="assets/img/one_ring.png" alt="One to rule them all" style="width: 20%;">

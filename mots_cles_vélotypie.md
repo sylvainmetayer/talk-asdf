@@ -21,7 +21,7 @@ tar.gz (fichier compressé)
 regex (expression régulière)
 releases
 tag
-header
+header (en-tête d'une requête HTTP)
 location
 ytt
 kubectl
@@ -32,3 +32,9 @@ ansible
 commit / committer
 gitignore
 home directory / répertoire utlisateur
+git
+templating
+yaml (acronyme)
+release candidate (RC)
+github
+dépôt (= repo/repository en anglais) (~ Dossier ou est stocké le code source, géré par git)

@@ -13,3 +13,7 @@ See [CanIUse](https://caniuse.com/css-has) for details
 ## Présentation
 
 [Voir README](./slides/README.md)
+
+## Others
+
+`cat mots_cles_vélotypie.md  | sort | uniq > mots_cles_velotypie.txt`

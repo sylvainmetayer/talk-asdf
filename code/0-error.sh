@@ -17,6 +17,8 @@ p 'Malheureusement, un vieux projet est la...'
 cd ../node14
 pwd
 
-pe 'npm start || true'
+p "npm start"
+
+npm start || true
 
 p 'Que faire ?'
