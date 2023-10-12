@@ -15,6 +15,8 @@ speaker: présentation plus orientée automatisation devops et que dans le cadre
   Your browser does not support the video tag.
 </video>
 
+> There are so many of them
+
 speaker:
 
 Côté devops, et programmation de manières générale, pleins d'outils qui évolue parfois vite. Trop vite.
@@ -22,7 +24,6 @@ Côté devops, et programmation de manières générale, pleins d'outils qui év
 Et on se retrouve avec des projets qui suivent niveau versions et d'autres qui restent sur des vieilles versions.
 
 Et il faut pourtant utiliser les 2
-
 
 ,,,
 
