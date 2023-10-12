@@ -6,11 +6,20 @@
 
 ## Création d'un plugin
 
+`ytt` : YAML templating tool that works on YAML structure instead of text
+
+<https://github.com/carvel-dev/ytt>
+
+,,,
+
+## Création d'un plugin
+
 <https://github.com/asdf-vm/asdf-plugin-template>
 
+<img src="assets/img/template.png" alt="Template Github">
+
 ```bash
-asdf plugin-add github-cli
-asdf install github-cli latest && asdf global github-cli latest
+asdf plugin-add github-cli && asdf install github-cli latest && asdf global github-cli latest
 gh repo create asdf-ytt --template asdf-vm/asdf-plugin-template --public
 git clone git@github.com:sylvainmetayer/asdf-ytt.git
 ```
@@ -78,7 +87,11 @@ install_version() {/* ... */ }
 
 `bin/download`
 
-```bash [2-9|11-13]
+```bash [1-3|10|12]
+# bin/download
+release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
+download_release "$ASDF_INSTALL_VERSION" "$release_file"
+
 # lib/utils.bash
 download_release() {
  local version filename url
@@ -88,17 +101,17 @@ download_release() {
  echo "* Downloading $TOOL_NAME release $version..."
  curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
-
-# bin/download
-release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
-download_release "$ASDF_INSTALL_VERSION" "$release_file"
 ```
 
 ,,,
 
 `bin/install`
 
-```bash [7-10|13-14]
+```bash [1-3|11-13]
+#bin/install
+chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
+install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
+
 # lib/utils.bash
 install_version() {
  local install_type="$1"
@@ -109,31 +122,26 @@ install_version() {
  test -x "$install_path/$TOOL_NAME" || fail "Expected $install_path/$TOOL_NAME to be executable."
  echo "$TOOL_NAME $version installation was successful!"
 }
-
-#bin/install
-chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
-install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
 ```
 
 ,,,
 
 `list-all`
 
-```bash [3-4|8-10|14]
+```bash [1-2|7-13|5]
+# bin/list-all
+list_all_versions | sort_versions | xargs echo
+
 # lib/utils.bash
-sort_versions() {
- sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
-  LC_ALL=C sort -t. -k 1,1 -k 2,2n -k 3,3n -k 4,4n -k 5,5n | awk '{print $2}'
-}
+sort_versions() { /* regex magic */ }
+
+list_all_versions() { list_github_tags }
 
 list_github_tags() {
  git ls-remote --tags --refs "$GH_REPO" |
   grep -o 'refs/tags/.*' | cut -d/ -f3- |
   sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
 }
-
-# bin/list-all
-list_all_versions | sort_versions | xargs echo
 ```
 
 ,,,
@@ -142,7 +150,7 @@ list_all_versions | sort_versions | xargs echo
 
 ```bash []
 # bin/latest-stable
-redirect_url=$(curl "${curl_opts[@]}" "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
+redirect_url=$(curl -sI "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
 ```
 
 ```bash [4]
@@ -152,18 +160,7 @@ server: GitHub.com
 location: https://github.com/carvel-dev/ytt/releases/tag/v0.46.0
 ```
 
-,,,
-
-```bash [3-6]
-version=
-printf "redirect url: %s\n" "$redirect_url" >&2
-if [[ "$redirect_url" == "$GH_REPO/releases" ]]; then
- version="$(list_all_versions | sort_versions | tail -n1 | xargs echo)"
-else
- version="$(printf "%s\n" "$redirect_url" | sed 's|.*/tag/v\{0,1\}||')"
-fi
-printf "%s\n" "$version"
-```
+speaker: Si header location avec n° version présent, on prends ça comme latest, sinon on prends la première du `list-all`
 
 ,,,
 
