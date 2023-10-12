@@ -39,32 +39,26 @@
 }
 
 // https://caniuse.com/css-has
-section:not(.stack).present:has(.advantage_inconvenience) {
+section:not(.stack).present:has(.img_background) {
   color: black;
-  background-color: white;
+  overflow: visible;
+  position: relative;
+  background-color: transparent;
 }
 
-.reveal h2.advantage_inconvenience {
-  color: black;
-}
-
-.advantage_inconvenience::before {
-  content: '❌';
+.img_background::before {
+  content: '';
+  display: block;
   position: absolute;
-  top: 0%;
-  left: 102%;
+  left: var(--left);
+  top: var(--top);
+  width: var(--width);
+  height: var(--height);
+  background-repeat: no-repeat;
+  background-image: var(--image);
+  background-size: cover;
+  // background-position: -150px -200px, 150px 0;
 }
-
-.advantage_inconvenience::after {
-  position: absolute;
-  top: 0%;
-  left: -10%;
-  content: '✅';
-}
-
-// section {
-// 	 top: -0.1em!important;
-// }
 
 #sources + table {
   font-size: 1rem;

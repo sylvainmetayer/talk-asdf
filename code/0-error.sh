@@ -12,7 +12,7 @@ pwd
 
 pe 'npm start'
 
-p 'Malheureusement, un vieux projet est la...'
+p 'Malheureusement, un vieux projet traine dans le coin...'
 
 cd ../node14
 pwd

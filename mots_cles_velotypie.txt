@@ -7,7 +7,9 @@ cat (instruction pour afficher le contenu d'un fichier)
 cluster
 commit / committer
 curl ( = cURL)
+dépôt (= repo/repository en anglais) (~ Dossier ou est stocké le code source, géré par git)
 devops
+flag (option)
 git
 github
 gitignore
@@ -22,7 +24,9 @@ nvm
 regex (expression régulière)
 release candidate (RC)
 releases
+reshim
 shell
+shims
 tag
 tar.gz (fichier compressé)
 tech lead
@@ -31,6 +35,6 @@ terraform
 tfenv
 tool-versions
 tree (affichage sous forme d'arborescence des fichiers)
-yaml (acronyme)
+yaml (acronyme Yet Another Markup Language)
 ytt
 zsh

@@ -4,6 +4,8 @@
 $ ./1-usage.sh
 ```
 
+speaker: Préciser que c'est les démos seront avec node, mais que asdf permet de gérer terraform, age, ...
+
 ,,,
 
 ## Et voilà !

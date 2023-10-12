@@ -34,7 +34,10 @@ gitignore
 home directory / répertoire utlisateur
 git
 templating
-yaml (acronyme)
+yaml (acronyme Yet Another Markup Language)
 release candidate (RC)
 github
 dépôt (= repo/repository en anglais) (~ Dossier ou est stocké le code source, géré par git)
+shims
+reshim
+flag (option)
