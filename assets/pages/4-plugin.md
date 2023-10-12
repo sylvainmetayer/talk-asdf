@@ -4,9 +4,42 @@
 
 ,,,
 
-## Structure d'un plugin
+## Création d'un plugin
 
 <https://github.com/asdf-vm/asdf-plugin-template>
+
+```bash
+asdf plugin-add github-cli
+asdf install github-cli latest && asdf global github-cli latest
+gh repo create asdf-ytt --template asdf-vm/asdf-plugin-template --public
+git clone git@github.com:sylvainmetayer/asdf-ytt.git
+```
+
+,,,
+
+`bash setup.bash`
+
+```shell
+[...]
+Setting up plugin: asdf-ytt
+author:        Sylvain METAYER
+plugin repo:   https://github.com/sylvainmetayer/asdf-ytt
+license:       https://choosealicense.com/licenses/mit/
+
+ytt github:   https://github.com/carvel-dev/ytt/
+ytt docs:     https://github.com/carvel-dev/ytt/
+ytt test:     `ytt --version`
+
+After confirmation, the `main` will be replaced with the generated
+template using the above information. Please ensure all seems correct.
+Type `yes` if you want to continue.
+```
+
+`git push --force-with-lease && git grep TODO`
+
+,,,
+
+## Structure d'un plugin
 
 ```shell
 .
