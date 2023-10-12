@@ -41,7 +41,6 @@ Type `yes` if you want to continue.
 
 ## Structure d'un plugin
 
-
 ```shell
 .
 ├── bin
