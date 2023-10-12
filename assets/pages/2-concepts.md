@@ -43,9 +43,9 @@ asdf install
 ## Local vs Global
 
 TODO Fix Me
-<span class="img_background" style="--top: 100px; --left: 800px; --width: 400px; --height: 800px; --image: url('/assets/img/illustrations/crop/Devfest_2023_Croquis_Petite_iLLU_indiana_jonas_basic.png')"></span>
+<span class="img_background" style="--top: -20%; --left: -290px; --width: 350px; --height: 500px; --image: url('/assets/img/illustrations/crop/Devfest_2023_Petite_iLLU_Robot_R2D2_basic.png')"></span>
 
-<span class="img_background" style="--top: 100px; --left: -100px; --width: 400px; --height: 200px; --image: url('/assets/img/illustrations/crop/Devfest_2023_Croquis_Petite_iLLU_indiana_jonas_basic.png')"></span>
+<!--<span class="img_background" style="--top: 100px; --left: -100px; --width: 400px; --height: 200px; --image: url('/assets/img/illustrations/crop/Devfest_2023_Croquis_Petite_iLLU_indiana_jonas_basic.png')"></span>-->
 
 ```text
 ~/
