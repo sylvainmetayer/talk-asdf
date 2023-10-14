@@ -10,6 +10,9 @@ function exists_in_list() {
 
 plugin_to_keep="age direnv fzf nodejs starship"
 
+# ensure to clean PS
+kubectx -u
+
 for i in $(asdf plugin-list); do
     if exists_in_list "$plugin_to_keep" " " "$i"; then
         echo "Keep plugin $i"
@@ -19,8 +22,6 @@ for i in $(asdf plugin-list); do
 done
 
 
-# ensure to clean PS
-kubectx -u
 
 for i in $(asdf list nodejs); do asdf uninstall nodejs $i; done
 
@@ -30,6 +31,7 @@ asdf install nodejs latest
 asdf install nodejs 20.8.0
 asdf install nodejs 14.21.3
 asdf install nodejs 18.18.0
+asdf global nodejs latest
 asdf plugin add ytt https://github.com/sylvainmetayer/asdf-ytt.git
 asdf install ytt latest
 asdf install ytt 0.45.0
