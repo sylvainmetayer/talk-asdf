@@ -31,3 +31,4 @@ Images
 - <https://xkcd.com/927/>
 - <https://tenor.com/fr/view/desert-neant-rolling-gif-15720968>
 - <https://www.ubuntubuzz.com/2019/03/what-to-do-after-installing-gnome-332-desktop-environment.html>
+- <https://i.giphy.com/media/9UqRcQHzBou6A/giphy.webp>

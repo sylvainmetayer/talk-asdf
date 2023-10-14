@@ -5,19 +5,28 @@ clear
 
 source ~/.bashrc
 
-pe 'asdf plugin test ytt https://github.com/sylvainmetayer/asdf-ytt.git "ytt --version"'
+p 'asdf plugin test ytt https://github.com/sylvainmetayer/asdf-ytt.git "ytt --version"'
 
-pei 'asdf plugin add ytt https://github.com/sylvainmetayer/asdf-ytt.git'
+sleep 2 && cat cheats/ytt_plugin_test.txt
 
-pe 'asdf list-all ytt'
+p 'asdf plugin add ytt https://github.com/sylvainmetayer/asdf-ytt.git'
 
-pe 'asdf install ytt latest'
+p 'asdf list-all ytt'
+
+sleep 1 && cat cheats/ytt_list_all.txt
+
+p 'asdf install ytt latest'
+
+cat cheats/ytt_install_latest.txt
 
 pei 'asdf global ytt latest'
 
 pei 'ytt --version'
 
-pei 'asdf install ytt 0.45.0'
+p 'asdf install ytt 0.45.0'
+
+cat cheats/ytt_install_0.45.0.txt
+
 pe 'asdf shell ytt 0.45.0'
 
 pei 'ytt --version'
