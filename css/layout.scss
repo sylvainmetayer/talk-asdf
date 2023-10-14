@@ -47,6 +47,7 @@ section:not(.stack).present:has(.img_background) {
 }
 
 .img_background::before {
+  --cover: contain;
   content: '';
   display: block;
   position: absolute;
@@ -56,8 +57,7 @@ section:not(.stack).present:has(.img_background) {
   height: var(--height);
   background-repeat: no-repeat;
   background-image: var(--image);
-  background-size: cover;
-  // background-position: -150px -200px, 150px 0;
+  background-size: var(--cover);
 }
 
 #sources + table {
