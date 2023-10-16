@@ -73,7 +73,7 @@ $ cat ~/.asdf/shims/node
 #!/usr/bin/env bash
 exec /home/s.metayer/.asdf/bin/asdf exec "node" "$@"
 
-$ ls ~/.asdf/installs/nodejs/20.8.0/bin -al
+$ ls ~/.asdf/installs/nodejs/20.8.1/bin -al
 node
 npm -> ../lib/node_modules/npm/bin/npm-cli.js
 npx -> ../lib/node_modules/npm/bin/npx-cli.js
