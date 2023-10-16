@@ -66,18 +66,18 @@ $ asdf local <outil> version>
 ## Shims
 
 ```bash
+$ ls ~/.asdf/shims/
+node                      npm                       npx
+
+$ cat ~/.asdf/shims/node
+#!/usr/bin/env bash
+exec /home/s.metayer/.asdf/bin/asdf exec "node" "$@"
+
 $ ls ~/.asdf/installs/nodejs/20.8.0/bin -al
 node
 npm -> ../lib/node_modules/npm/bin/npm-cli.js
 npx -> ../lib/node_modules/npm/bin/npx-cli.js
-yarn -> ../lib/node_modules/yarn/bin/yarn.js
-yarnpkg -> ../lib/node_modules/yarn/bin/yarn.js
-
-$ ls ~/.asdf/shims/
-age                       age-keygen                aws                    go
-node                      npm                       direnv                 npx
-yarn                      ytt
 ```
 
 speaker: Le dossier ~/.asdf/shims contient les binaires de la versions actuelles.
-Lors d'un changement de .tool-versions / d'outil / de version, asdf fait un reshim des biniaires pour la versions donnée et l'outil donné, ce qui recré les fichiers dans le dossier ~/asdf/shims depuis le dossier ~/.asdf/install/<tool>/<version>/bin/
+Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon le dossier ~/.tool-versions...) la version à utiliser. Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/<tool>/<version>/bin/<bin>
