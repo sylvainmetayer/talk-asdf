@@ -16,7 +16,8 @@ Plugins : Mentionner asdf-community pour les plugins les plus connus / maintenus
 
 .tools version : On peut/doit commit ce fichier au même titre que le gitignore
 
-shims : Le dossier ~/.asdf/shims contient les binaires de la versions actuelles. Lors d'un changement de .tool-versions / d'outil / de version, asdf fait un reshim des biniaires pour la versions donnée et l'outil donné, ce qui recré les fichiers dans le dossier ~/asdf/shims depuis le dossier ~/.asdf/install///bin/
+shims : Le dossier ~/.asdf/shims contient les binaires de la versions actuelles.
+Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon le dossier ~/.tool-versions...) la version à utiliser. Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/<tool>/<version>/bin/<bin>
 
 !!! démo : Préciser que c'est les démos seront avec node, mais que asdf permet de gérer terraform, age, ...
 
