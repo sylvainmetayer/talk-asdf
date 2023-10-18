@@ -164,11 +164,12 @@ speaker: Si header location avec n° version présent, on prends ça comme lates
 
 ,,,
 
+<!--
 ### Besoin de plus ?
 
 <https://asdf-vm.com/plugins/create.html#scripts-overview>
 
-,,,
+-->
 
 ## Testons ça
 
