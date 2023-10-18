@@ -4,9 +4,9 @@
 asdf plugin-add <plugin-name> <optional-repo-url>
 ```
 
-<https://github.com/asdf-vm/asdf-plugins>
+<https://github.com/asdf-vm/asdf-plugins> <!-- .element: class="fragment" -->
 
-<img src="assets/img/community.png" alt="ASDF community plugin">
+<img src="assets/img/community.png" alt="ASDF community plugin"><!-- .element: class="fragment" -->
 
 
 speaker:
