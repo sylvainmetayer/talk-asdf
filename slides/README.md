@@ -9,14 +9,12 @@
 
 ## TODO / Liens à l'arrache
 
-- <https://github.com/asdf-community/asdf-hashicorp>
-- <https://github.com/asdf-vm/asdf>
 - <https://github.com/jdx/rtx>
 - <https://devenv.sh/reference/options/>
 
-Couleurs :
+https://openfeedback.io/p32EOIbP5bj4WDdz8bJs/2022-10-19/asdfunoutilpourtoutesvosversions
 
-#FAEFB2 / #0E1324
+https://r.sylvain.dev/devfest-nantes2023
 
 ## Références
 
