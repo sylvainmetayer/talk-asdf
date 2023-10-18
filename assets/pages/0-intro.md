@@ -31,7 +31,7 @@ Et il faut pourtant utiliser les 2
 $ ./0-error.sh
 ```
 
-<span class="img_background" style="--top: 120%; --left: 350px; --width: 600px; --height: 500px; ----cover: auto; --image: url('assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_Trex.png')"></span>
+<span class="img_background" style="--top: 120%; --left: 350px; --width: 600px; --height: 500px; ----cover: auto; --image: url('/assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_Trex.png')"></span>
 
 ,,,
 
