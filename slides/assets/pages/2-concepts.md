@@ -22,7 +22,7 @@ $ cat .tool-versions
 nodejs 14.21.3
 ```
 
-<!-- <span class="img_background" style="--top: 300%; --left: 110%; --width: 100px; --height: 500px; ----cover: auto; --image: url('/assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_garden.png')"></span> -->
+<!-- <span class="img_background" style="--top: 300%; --left: 110%; --width: 100px; --height: 500px; ----cover: auto; --image: url('assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_garden.png')"></span> -->
 
 speaker:
 
