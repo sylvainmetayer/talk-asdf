@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "on modifie plus à une heure de la démo!"
+exit 1
+
 # https://www.baeldung.com/linux/check-variable-exists-in-list
 function exists_in_list() {
     LIST=$1
@@ -17,11 +20,10 @@ for i in $(asdf plugin-list); do
     if exists_in_list "$plugin_to_keep" " " "$i"; then
         echo "Keep plugin $i"
     else
-        asdf plugin-remove "$i"
+        #asdf plugin-remove "$i"
+        echo "Non, on clean plus à une heure de la démo!"
     fi
 done
-
-
 
 for i in $(asdf list nodejs); do asdf uninstall nodejs $i; done
 
