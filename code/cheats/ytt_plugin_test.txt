@@ -3,7 +3,7 @@ Updating ytt to master
 fatal : impossible de trouver la référence distante master
 fatal : Une seule révision attendue
 erreur : le spécificateur de chemin 'master' ne correspond à aucun fichier connu de git
-redirect url: https://github.com/carvel-dev/ytt/releases/tag/v0.46.0
-* Downloading ytt release 0.46.0...
-ytt 0.46.0 installation was successful!
-ytt version 0.46.0
+redirect url: https://github.com/carvel-dev/ytt/releases/tag/v0.48.0
+* Downloading ytt release 0.48.0...
+ytt 0.48.0 installation was successful!
+ytt version 0.48.0

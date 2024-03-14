@@ -1,1 +1,1 @@
-nodejs 20.8.1 is already installed
+nodejs 21.6.2 is already installed

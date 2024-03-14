@@ -1,0 +1,15 @@
+== Pour aller plus loin
+
+<https://asdf-vm.com/>
+
+
+
+[.notes]
+****
+https://github.com/jdx/rtx
+https://devenv.sh
+****
+
+== Merci !
+
+TODO QR Code Openfeedback / Slides

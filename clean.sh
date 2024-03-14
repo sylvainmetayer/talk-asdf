@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "on modifie plus à une heure de la démo!"
+echo "Create a container with asdf and plugins installed and run theses into ?"
 exit 1
 
 # https://www.baeldung.com/linux/check-variable-exists-in-list
@@ -25,12 +25,12 @@ for i in $(asdf plugin-list); do
     fi
 done
 
-for i in $(asdf list nodejs); do asdf uninstall nodejs $i; done
+for i in $(asdf list nodejs); do asdf uninstall nodejs "$i"; done
 
 asdf plugin remove nodejs
 asdf plugin add nodejs
 asdf install nodejs latest
-asdf install nodejs 20.8.1
+asdf install nodejs 21.6.2
 asdf install nodejs 14.21.3
 asdf install nodejs 18.18.0
 asdf global nodejs latest

@@ -48,6 +48,8 @@ pei 'node -v'
 
 p "Il nous faut du node 14 ici !"
 
+clear
+
 pei 'asdf local nodejs 14.21.3'
 
 pei 'cat .tool-versions'
@@ -57,6 +59,8 @@ pe 'npm start'
 rm .tool-versions> /dev/null 2>/dev/null || true
 
 p 'Et si on testait notre autre code sur une autre version ?'
+
+clear
 
 cd ../node18
 pwd

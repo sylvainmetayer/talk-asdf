@@ -1,7 +1,16 @@
-# IDE
+*.iml
 .idea
-.vscode
+target
+.DS_Store
+reveal.js
+*.html
+.asciidoctor
+!index-docinfo-footer.html
+js/hightlight.min.js
+code/age.key
+code/*.secrets.yaml
+code/recipients/secrets.*.yaml
+code/recipients/*.key
+code/recipients/.sops.yaml
 
-slides/node_modules
-slides/dist/
-slides/revealjs_data/dist/
+code/demo-magic.sh

@@ -1,0 +1,88 @@
+[%notitle.columns.is-vcentered.transparency]
+== Présentation
+
+image::devoxx_presentation.jpg[background, size=fill]
+
+[.column.is-one-third]
+--
+image::photo.png[]
+--
+
+[.column.is-3.has-text-left.medium]
+--
+Sylvain MÉTAYER
+
+link:https://sylvain.dev[]
+--
+
+[.column]
+--
+[.vertical-align-middle]
+image:logo.png[width=250]
+
+Tech Lead @Onepoint
+--
+
+[.notes]
+****
+Conteneur / k8s quotidien, outils cloud évoluent rapidement et sont nombreux
+****
+
+== Problématique
+
+[.column]
+--
+.There are so many of them...
+video::so_many_of_them_lotr.mp4[width=1200,opts="autoplay,loop,muted"]
+
+// TODO https://github.com/asciidoctor/asciidoctor-reveal.js/issues/523
+
+
+--
+
+[.notes]
+****
+Côté devops, et programmation de manières générale, pleins d'outils qui évolue parfois vite. Trop vite.
+
+Et on se retrouve avec des projets qui suivent niveau versions et d'autres qui restent sur des vieilles versions.
+
+Et il faut pourtant utiliser les 2
+****
+
+== Contexte
+
+image::illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_Trex.png[height=200]
+
+[source,bash]
+----
+./0-error.sh
+----
+
+== Solution
+
+TODO Update (Nantes)
+
+[source,shell]
+----
+ ______
+< asdf >
+ ------
+ \     /\  ___  /\
+  \   // \/   \/ \\
+     ((    O O    ))
+      \\ /     \ //
+       \/  | |  \/
+        |  | |  |
+        |  | |  |
+        |   o   |
+        | |   | |
+        |m|   |m|
+----
+
+[.notes]
+****
+1. Installation
+2. Concepts
+3. Usage
+4. Création d'un plugin
+****

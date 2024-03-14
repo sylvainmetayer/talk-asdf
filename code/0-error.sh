@@ -7,12 +7,14 @@ p '2 projets node que tout sépare'
 
 pei 'node -v'
 
-cd node18
+cd node21
 pwd
 
 pe 'npm start'
 
 p 'Malheureusement, un vieux projet traine dans le coin...'
+
+clear
 
 cd ../node14
 pwd
