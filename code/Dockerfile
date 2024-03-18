@@ -1,4 +1,4 @@
-# docker build -t asdf-demo .
+# docker build -t ghcr.io/sylvainmetayer/talk-asdf .
 FROM node:21-bookworm
 
 # https://www.ivarch.com/programs/pv.shtml
@@ -15,3 +15,4 @@ RUN echo '. "$HOME/.asdf/completions/asdf.bash"' >> /home/node/.bashrc
 
 WORKDIR /demo
 COPY --chown=node:node . .
+RUN ./setup.sh

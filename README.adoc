@@ -14,3 +14,7 @@ python3 -m http.server # open localhost:8000
 
 # use terminal with custom profile white background
 ----
+
+== Demo
+
+`docker container run --rm -it ghcr.io/sylvainmetayer/talk-asdf bash`

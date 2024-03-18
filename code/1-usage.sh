@@ -62,7 +62,7 @@ p 'Et si on testait notre autre code sur une autre version ?'
 
 clear
 
-cd ../node18
+cd ../node21
 pwd
 
 pe 'npm start'
