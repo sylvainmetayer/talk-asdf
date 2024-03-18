@@ -1,7 +1,7 @@
 [%notitle.columns.is-vcentered.transparency]
 == Présentation
 
-image::devoxx_presentation.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
 
 [.column.is-one-third]
 --
@@ -49,9 +49,10 @@ Et on se retrouve avec des projets qui suivent niveau versions et d'autres qui r
 Et il faut pourtant utiliser les 2
 ****
 
+[.transparency]
 == Contexte
 
-image::illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_Trex.png[height=200]
+image::devoxx/DevoxxFR2024_0057.jpg[background, size=fill]
 
 [source,bash]
 ----

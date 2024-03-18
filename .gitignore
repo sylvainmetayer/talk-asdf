@@ -2,7 +2,7 @@
 .idea
 target
 .DS_Store
-reveal.js
+reveal.js/
 *.html
 .asciidoctor
 !index-docinfo-footer.html

@@ -29,3 +29,4 @@ include::slides/03-usage.adoc[]
 include::slides/04-plugin.adoc[]
 include::slides/05-plugin-manager.adoc[]
 include::slides/06-conclusion.adoc[]
+
