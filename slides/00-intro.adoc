@@ -61,24 +61,7 @@ image::devoxx/DevoxxFR2024_0057.jpg[background, size=fill]
 
 == Solution
 
-TODO Update (Nantes)
-
-[source,shell]
-----
- ______
-< asdf >
- ------
- \     /\  ___  /\
-  \   // \/   \/ \\
-     ((    O O    ))
-      \\ /     \ //
-       \/  | |  \/
-        |  | |  |
-        |  | |  |
-        |   o   |
-        | |   | |
-        |m|   |m|
-----
+image::asdf.png[alt='']
 
 [.notes]
 ****

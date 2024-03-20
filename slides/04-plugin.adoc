@@ -1,31 +1,31 @@
 == Création d'un plugin en moins de 10min
 
-<img src="assets/img/clock.webp" alt="Clock">
+image::clock.webp[alt='Vite, vite !']
 
-=== Création d'un plugin (1/3)
+=== Présentation de l'outil
 
 `ytt` : YAML templating tool that works on YAML structure instead of text
 
 <https://github.com/carvel-dev/ytt>
 
-=== Création d'un plugin (2/3)
+=== Template
 
 <https://github.com/asdf-vm/asdf-plugin-template>
 
 image::template.png[alt='Template Github']
 
-[source,bash]
+[%linenums,bash]
 ----
 asdf plugin-add github-cli && asdf install github-cli latest && asdf global github-cli latest
 gh repo create asdf-ytt --template asdf-vm/asdf-plugin-template --public
 git clone git@github.com:sylvainmetayer/asdf-ytt.git
 ----
 
-=== Création d'un plugin (3/3)
+=== Création du template
 
 `bash setup.bash`
 
-[source,shell]
+[%linenums,bash]
 ----
 [...]
 Setting up plugin: asdf-ytt
@@ -46,7 +46,7 @@ Type `yes` if you want to continue.
 
 == Structure d'un plugin
 
-[source,shell]
+[%linenums,bash]
 ----
 .
 ├── bin
@@ -62,7 +62,7 @@ Type `yes` if you want to continue.
 
 === lib/utils.bash
 
-[%linenum,bash]
+[%linenums,bash]
 ----
 GH_REPO="https://github.com/carvel-dev/ytt"
 TOOL_NAME="ytt"
@@ -81,7 +81,7 @@ install_version() {/* ... */ }
 
 === bin/download
 
-[source,language="bash [1-3|10|12]"]
+[%linenums,bash,highlight=1-3|10|12]
 ----
 # bin/download
 release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
@@ -177,7 +177,7 @@ image::asdf_scripts.png[alt='scripts disponibles']
 
 <https://github.com/sylvainmetayer/asdf-ytt>
 
-[source,bash]
+[%linenums,bash]
 ----
 $ ./2-plugin-demo.sh
 ----

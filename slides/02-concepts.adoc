@@ -20,15 +20,17 @@ image::community.png[alt='ASDF community plugin']
 Permet l'installation d'un plugin pour gérer les versions d'un outil.
 ****
 
+[.transparency]
 == .tool-versions
+
+image::devoxx/DevoxxFR2024_0058.jpg[background, size=cover]
+
 
 [source,shell]
 ----
 $ cat .tool-versions
 nodejs 14.21.3
 ----
-
-<!-- <span class="img_background" style="--top: 300%; --left: 110%; --width: 100px; --height: 500px; ----cover: auto; --image: url('/assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_garden.png')"></span> -->
 
 [.notes]
 ****
