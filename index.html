@@ -427,33 +427,20 @@ ul.byline li + li {
 <div class="paragraph"><p>Et il faut pourtant utiliser les 2</p></div></aside></div></section>
 <section id="_contexte" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0057.jpg" data-background-size="fill"><h2>Contexte</h2><div class="slide-content">
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">./0-error.sh</code></pre></div></div></div></section>
-<section id="_solution"><h2>Solution</h2><div class="slide-content"><div class="paragraph"><p>TODO Update (Nantes)</p></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell"> ______
-&lt; asdf &gt;
- ------
- \     /\  ___  /\
-  \   // \/   \/ \\
-     ((    O O    ))
-      \\ /     \ //
-       \/  | |  \/
-        |  | |  |
-        |  | |  |
-        |   o   |
-        | |   | |
-        |m|   |m|</code></pre></div></div>
+<section id="_solution"><h2>Solution</h2><div class="slide-content"><div class="imageblock"><img src="images/asdf.png" alt=""></div>
 <aside class="notes"><div class="olist arabic"><ol class="arabic"><li><p>Installation</p></li><li><p>Concepts</p></li><li><p>Usage</p></li><li><p>Création d&#8217;un plugin</p></li></ol></div></aside></div></section>
-<section id="_installation"><h2>Installation</h2><div class="slide-content"><div class="paragraph"><p><a href="https://asdf-vm.com/guide/getting-started.html" class="bare">https://asdf-vm.com/guide/getting-started.html</a></p></div>
+<section id="_installation" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0023.jpg" data-background-size="cover"><h2>Installation</h2><div class="slide-content">
+<div class="paragraph"><p><a href="https://asdf-vm.com/guide/getting-started.html" class="bare">https://asdf-vm.com/guide/getting-started.html</a></p></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 echo . "$HOME/.asdf/asdf.sh" &gt; ~/.bashrc
-echo . "$HOME/.asdf/completions/asdf.bash" &gt; ~/.bashrc</code></pre></div></div>
-<div class="paragraph"><p>&lt;span class="img_background" style="--top: -20%; --left: -290px; --width: 350px; --height: 500px; --image: url('/assets/img/illustrations/crop/Devfest_2023_Petite_iLLU_Robot_R2D2_basic.png')"&gt;&lt;/span&gt;</p></div></div></section>
+echo . "$HOME/.asdf/completions/asdf.bash" &gt; ~/.bashrc</code></pre></div></div></div></section>
 <section id="_plugins"><h2>Plugins</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">asdf plugin-add &lt;plugin-name&gt; &lt;optional-repo-url&gt;</code></pre></div></div>
 <div class="openblock fragment"><div class="content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugins" class="bare">https://github.com/asdf-vm/asdf-plugins</a></p></div></div></div>
 <div class="openblock fragment"><div class="content"><div class="imageblock"><img src="images/community.png" alt="ASDF community plugin"></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Permet l&#8217;installation d&#8217;un plugin pour gérer les versions d&#8217;un outil.</p></div></aside></div></section>
-<section id="_tool_versions"><h2>.tool-versions</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">$ cat .tool-versions
+<section id="_tool_versions" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0058.jpg" data-background-size="cover"><h2>.tool-versions</h2><div class="slide-content">
+<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">$ cat .tool-versions
 nodejs 14.21.3</code></pre></div></div>
-<div class="paragraph"><p>&lt;!-- &lt;span class="img_background" style="--top: 300%; --left: 110%; --width: 100px; --height: 500px; ----cover: auto; --image: url('/assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_garden.png')"&gt;&lt;/span&gt; -&#8594;</p></div>
 <aside class="notes"><div class="ulist"><ul><li><p>Définit les versions souhaitées d&#8217;un ou plusieurs outil(s).</p></li><li><p>On peut/doit commit ce fichier au même titre que le gitignore</p></li></ul></div></aside></div></section>
 <section id="_installation_dune_version"><h2>Installation d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">asdf install &lt;plugin&gt; &lt;version&gt;
 asdf install nodejs 14.21.3
@@ -483,17 +470,16 @@ npx -&gt; ../lib/node_modules/npm/bin/npx-cli.js</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Le dossier ~/.asdf/shims contient les binaires des versions actuelles.
 Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon le dossier ~/.tool-versions&#8230;&#8203;) la version à utiliser.
 Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/&lt;tool&gt;/&lt;version&gt;/bin/&lt;bin&gt;</p></div></aside></div></section>
-<section id="_démo"><h2>Démo</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">./1-usage.sh</code></pre></div></div>
-<div class="paragraph"><p>&lt;span class="img_background" style="--top: 120%; --left: 350px; --width: 600px; --height: 500px; ----cover: auto; --image: url('/assets/img/illustrations/crop/Devfest_2023_Affiche_Principal_Couleur_Trex.png')"&gt;&lt;/span&gt;</p></div>
+<section id="_démo"><h2>Démo</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">./1-usage.sh</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Préciser que les démos seront avec node, mais qu&#8217;asdf permet de gérer terraform, age, &#8230;&#8203;</p></div></aside></div></section>
 <section id="_et_voilà"><h2>Et voilà !</h2><div class="slide-content"><div class="imageblock"><img src="images/one_ring.png" alt="One to rule them all" width="20%"></div></div></section>
-<section><section id="_création_dun_plugin_en_moins_de_10min"><h2>Création d&#8217;un plugin en moins de 10min</h2><div class="slide-content"><div class="paragraph"><p>&lt;img src="assets/img/clock.webp" alt="Clock"&gt;</p></div></div></section><section id="_création_dun_plugin_13"><h2>Création d&#8217;un plugin (1/3)</h2><div class="slide-content"><div class="paragraph"><p><code>ytt</code> : YAML templating tool that works on YAML structure instead of text</p></div>
-<div class="paragraph"><p><a href="https://github.com/carvel-dev/ytt" class="bare">https://github.com/carvel-dev/ytt</a></p></div></div></section><section id="_création_dun_plugin_23"><h2>Création d&#8217;un plugin (2/3)</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugin-template" class="bare">https://github.com/asdf-vm/asdf-plugin-template</a></p></div>
+<section><section id="_création_dun_plugin_en_moins_de_10min"><h2>Création d&#8217;un plugin en moins de 10min</h2><div class="slide-content"><div class="imageblock"><img src="images/clock.webp" alt="Vite, vite !"></div></div></section><section id="_présentation_de_loutil"><h2>Présentation de l&#8217;outil</h2><div class="slide-content"><div class="paragraph"><p><code>ytt</code> : YAML templating tool that works on YAML structure instead of text</p></div>
+<div class="paragraph"><p><a href="https://github.com/carvel-dev/ytt" class="bare">https://github.com/carvel-dev/ytt</a></p></div></div></section><section id="_template"><h2>Template</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugin-template" class="bare">https://github.com/asdf-vm/asdf-plugin-template</a></p></div>
 <div class="imageblock"><img src="images/template.png" alt="Template Github"></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">asdf plugin-add github-cli &amp;&amp; asdf install github-cli latest &amp;&amp; asdf global github-cli latest
+<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">asdf plugin-add github-cli &amp;&amp; asdf install github-cli latest &amp;&amp; asdf global github-cli latest
 gh repo create asdf-ytt --template asdf-vm/asdf-plugin-template --public
-git clone git@github.com:sylvainmetayer/asdf-ytt.git</code></pre></div></div></div></section><section id="_création_dun_plugin_33"><h2>Création d&#8217;un plugin (3/3)</h2><div class="slide-content"><div class="paragraph"><p><code>bash setup.bash</code></p></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">[...]
+git clone git@github.com:sylvainmetayer/asdf-ytt.git</code></pre></div></div></div></section><section id="_création_du_template"><h2>Création du template</h2><div class="slide-content"><div class="paragraph"><p><code>bash setup.bash</code></p></div>
+<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">[...]
 Setting up plugin: asdf-ytt
 author:        Sylvain METAYER
 plugin repo:   https://github.com/sylvainmetayer/asdf-ytt
@@ -507,7 +493,7 @@ After confirmation, the `main` will be replaced with the generated
 template using the above information. Please ensure all seems correct.
 Type `yes` if you want to continue.</code></pre></div></div>
 <div class="paragraph"><p><code>git push --force-with-lease &amp;&amp; git grep TODO</code></p></div></div></section></section>
-<section><section id="_structure_dun_plugin"><h2>Structure d&#8217;un plugin</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">.
+<section><section id="_structure_dun_plugin"><h2>Structure d&#8217;un plugin</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">.
 ├── bin
 │   ├── download
 │   ├── install
@@ -516,7 +502,7 @@ Type `yes` if you want to continue.</code></pre></div></div>
 ├── lib
 │   └── utils.bash
 ├── LICENSE
-├── README.md</code></pre></div></div></div></section><section id="_libutils_bash"><h2>lib/utils.bash</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">GH_REPO="https://github.com/carvel-dev/ytt"
+├── README.md</code></pre></div></div></div></section><section id="_libutils_bash"><h2>lib/utils.bash</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">GH_REPO="https://github.com/carvel-dev/ytt"
 TOOL_NAME="ytt"
 TOOL_TEST="ytt --version"
 
@@ -528,7 +514,7 @@ list_all_versions() {/* ... */ }
 
 download_release() {/* ... */ }
 
-install_version() {/* ... */ }</code></pre></div></div></div></section><section id="_bindownload"><h2>bin/download</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash [1-3|10|12] hljs" data-noescape="true" data-lang="bash [1-3|10|12]"># bin/download
+install_version() {/* ... */ }</code></pre></div></div></div></section><section id="_bindownload"><h2>bin/download</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="1,2,3|10|12" data-lang="bash"># bin/download
 release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
@@ -575,7 +561,7 @@ location: https://github.com/carvel-dev/ytt/releases/tag/v0.48.0</code></pre></d
 <div class="openblock column"><div class="content"><div class="paragraph"><p>TODO Affichage</p></div>
 <div class="imageblock"><img src="images/asdf_scripts.png" alt="scripts disponibles"></div></div></div></div></section></section>
 <section id="_testons_ça"><h2>Testons ça</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/sylvainmetayer/asdf-ytt" class="bare">https://github.com/sylvainmetayer/asdf-ytt</a></p></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ ./2-plugin-demo.sh</code></pre></div></div></div></section>
+<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ ./2-plugin-demo.sh</code></pre></div></div></div></section>
 <section id="_gérer_vos_plugins_avec_un_plugin"><h2>Gérer vos plugins&#8230;&#8203; avec un plugin ?</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-community/asdf-plugin-manager" class="bare">https://github.com/asdf-community/asdf-plugin-manager</a></p></div>
 <div class="imageblock"><img src="images/inception.webp" alt="Inception"></div>
 <aside class="notes"><div class="ulist"><ul><li><p>Sécurité</p></li><li><p>Mise à jour</p></li></ul></div></aside>
