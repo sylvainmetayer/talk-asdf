@@ -3,7 +3,7 @@ FROM node:21-bookworm
 
 # https://www.ivarch.com/programs/pv.shtml
 
-RUN apt-get update && apt-get install -y pv curl git
+RUN apt-get update && apt-get install -y pv curl git bat
 
 USER node
 WORKDIR /home/node

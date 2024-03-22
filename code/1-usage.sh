@@ -52,7 +52,7 @@ clear
 
 pei 'asdf local nodejs 14.21.3'
 
-pei 'cat .tool-versions'
+pei 'bat .tool-versions'
 
 pe 'npm start'
 
