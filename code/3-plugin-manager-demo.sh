@@ -29,6 +29,11 @@ p "Mais que contient alors notre binaire sops ?"
 
 pe "bat $(asdf where sops)/bin/sops"
 
-p "Oups, il semblerait qu'il s'agissait bien d'un plugin malveillant.. Comment faire ?"
+p "Oups, il semblerait qu'il s'agissait bien d'un plugin malveillant.. Regardons en détail le code utilisé pour télécharger une version de sops"
+
+pe "bat /home/node/.asdf/plugins/sops/bin/download"
+pe "/home/node/.asdf/plugins/sops/bin/evil.sh"
+
+p "Comment prévenir cela ?"
 
 # TODO Utilisation de plugin-manager
