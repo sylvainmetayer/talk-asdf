@@ -1,0 +1,2 @@
+redirect url: https://github.com/getsops/sops/releases/tag/v3.8.1
+sops 3.8.1 installation was successful!

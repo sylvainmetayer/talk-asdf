@@ -17,4 +17,4 @@ python3 -m http.server # open localhost:8000
 
 == Demo
 
-`docker container run --rm -it ghcr.io/sylvainmetayer/talk-asdf bash`
+`docker container run --rm -it ghcr.io/sylvainmetayer/talk-asdf`

@@ -1,3 +1,0 @@
-redirect url: https://github.com/carvel-dev/ytt/releases/tag/v0.48.0
-* Downloading ytt release 0.48.0...
-ytt 0.48.0 installation was successful!

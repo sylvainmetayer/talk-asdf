@@ -1,0 +1,2 @@
+sops 3.8.0
+[info] a new version of sops (v3.8.1) is available, you can update by visiting: https://github.com/getsops/sops/releases/tag/v3.8.1

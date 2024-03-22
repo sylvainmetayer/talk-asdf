@@ -1,34 +1,36 @@
 #!/usr/bin/env bash
 
-source ./.demo-magic.sh || exit 1
+source ./.demo-magic.sh -d || exit 1
 clear
 
 source ~/.bashrc
 
-p 'asdf plugin test ytt https://github.com/sylvainmetayer/asdf-ytt.git "ytt --version"'
+p 'asdf plugin test sops https://github.com/sylvainmetayer/asdf-sops.git "sops -v"'
 
-sleep 2 && cat cheats/ytt_plugin_test.txt
+sleep 2 && cat cheats/sops_plugin_test.txt
 
-p 'asdf plugin add ytt https://github.com/sylvainmetayer/asdf-ytt.git'
+p 'asdf plugin add sops https://github.com/sylvainmetayer/asdf-sops.git'
 
-p 'asdf list-all ytt'
+p 'asdf list-all sops'
 
-sleep 1 && cat cheats/ytt_list_all.txt
+sleep 1 && cat cheats/sops_list_all.txt
 
-p 'asdf install ytt latest'
+p 'asdf install sops latest'
 
-cat cheats/ytt_install_latest.txt
+cat cheats/sops_install_latest.txt
 
-pei 'asdf global ytt latest'
+pei 'asdf global sops latest'
 
-pei 'ytt --version'
+pei 'sops --version'
 
-p 'asdf install ytt 0.45.0'
+p 'asdf install sops 3.8.0'
 
-cat cheats/ytt_install_0.45.0.txt
+cat cheats/sops_install_3.8.0.txt
 
-pe 'asdf shell ytt 0.45.0'
+# FIXME Shell integration is broken with demo-magic, need to fake it.
+p 'asdf shell sops 3.8.0'
+p 'sops -v'
 
-pei 'ytt --version'
+cat cheats/sops_shell_3.8.0.txt
 
 p ""

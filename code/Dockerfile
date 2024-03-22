@@ -14,5 +14,12 @@ RUN echo '. "$HOME/.asdf/asdf.sh"' >> /home/node/.bashrc
 RUN echo '. "$HOME/.asdf/completions/asdf.bash"' >> /home/node/.bashrc
 
 WORKDIR /demo
-COPY --chown=node:node . .
+
+COPY --chown=node:node setup.sh setup.sh
 RUN ./setup.sh
+
+# For demonstration purpose of credentials leak
+RUN ssh-keygen -b 1024 -f ~/.ssh/id_rsa -q -N ""
+
+COPY --chown=node:node . .
+ENTRYPOINT ["/usr/bin/bash"]

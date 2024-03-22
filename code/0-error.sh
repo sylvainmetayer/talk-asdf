@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./.demo-magic.sh || exit 1
+source ./.demo-magic.sh -d || exit 1
 clear
 
 p '2 projets node que tout sépare'

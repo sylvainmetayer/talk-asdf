@@ -22,11 +22,11 @@
 
 @sylvain_metayer
 
-include::slides/00-intro.adoc[]
-include::slides/01-installation.adoc[]
-include::slides/02-concepts.adoc[]
-include::slides/03-usage.adoc[]
-include::slides/04-plugin.adoc[]
-include::slides/05-plugin-manager.adoc[]
-include::slides/06-conclusion.adoc[]
+include::slides/000-intro.adoc[]
+include::slides/010-installation.adoc[]
+include::slides/020-concepts.adoc[]
+include::slides/030-usage.adoc[]
+include::slides/040-plugin.adoc[]
+include::slides/050-plugin-manager.adoc[]
+include::slides/060-conclusion.adoc[]
 

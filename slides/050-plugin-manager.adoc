@@ -1,0 +1,25 @@
+== Gérer vos plugins... avec un plugin ?
+
+https://github.com/asdf-community/asdf-plugin-manager
+
+image::inception.webp[alt="Inception"]
+
+=== Pourquoi ?
+
+// https://github.com/sylvainmetayer/asdf-sops-evil/commit/ef3a7bc8781d61a9bc3c33e37b118f62e73ab37e
+
+TODO Diagram plugin-evil-sops
+
+=== Comment ?
+
+instlalation plugin
+
+=== Démo
+
+[.notes]
+****
+- Sécurité
+- Mise à jour
+****
+
+TODO Démo avec un plugin-evil-sops

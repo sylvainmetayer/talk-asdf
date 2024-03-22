@@ -2,6 +2,8 @@
 
 echo "Silent mode is on?"
 echo "Lance le script clean.sh"
+echo "T'as coupé le son ??"
+read -r
 
 echo "Battery saver"
 #sudo systemctl stop docker.service
@@ -11,4 +13,4 @@ echo "Battery saver"
 kubectx -u || true
 
 gnome-terminal --window-with-profile=demo --full-screen --working-directory "$(pwd)/code"
-firefox -P work --new-window 'http://localhost:8000'
+firefox -P work 'https://asdf.talks.sylvain.dev/'  'http://localhost:8000'

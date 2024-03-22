@@ -4,9 +4,9 @@ image::clock.webp[alt='Vite, vite !']
 
 === Présentation de l'outil
 
-`ytt` : YAML templating tool that works on YAML structure instead of text
+`sops` : Simple and flexible tool for managing secretsfootnote:[link:https://sops.talks.sylvain.dev[Instant Pub] !]
 
-<https://github.com/carvel-dev/ytt>
+<https://github.com/getsops/sops>
 
 === Template
 
@@ -17,8 +17,8 @@ image::template.png[alt='Template Github']
 [%linenums,bash]
 ----
 asdf plugin-add github-cli && asdf install github-cli latest && asdf global github-cli latest
-gh repo create asdf-ytt --template asdf-vm/asdf-plugin-template --public
-git clone git@github.com:sylvainmetayer/asdf-ytt.git
+gh repo create asdf-sops --template asdf-vm/asdf-plugin-template --public
+git clone git@github.com:sylvainmetayer/asdf-sops.git
 ----
 
 === Création du template
@@ -28,18 +28,20 @@ git clone git@github.com:sylvainmetayer/asdf-ytt.git
 [%linenums,bash]
 ----
 [...]
-Setting up plugin: asdf-ytt
-author:        Sylvain METAYER
-plugin repo:   https://github.com/sylvainmetayer/asdf-ytt
+Setting up plugin: asdf-sops
+
+author:        Sylvain
+plugin repo:   https://github.com/sylvainmetayer/asdf-sops
 license:       https://choosealicense.com/licenses/mit/
 
-ytt github:   https://github.com/carvel-dev/ytt/
-ytt docs:     https://github.com/carvel-dev/ytt/
-ytt test:     `ytt --version`
 
+sops github:   https://github.com/getsops/sops
+sops docs:     https://github.com/getsops/sops
+sops test:     `sops -v`
 After confirmation, the `main` will be replaced with the generated
 template using the above information. Please ensure all seems correct.
 Type `yes` if you want to continue.
+
 ----
 
 `git push --force-with-lease && git grep TODO`
@@ -64,9 +66,9 @@ Type `yes` if you want to continue.
 
 [%linenums,bash]
 ----
-GH_REPO="https://github.com/carvel-dev/ytt"
-TOOL_NAME="ytt"
-TOOL_TEST="ytt --version"
+GH_REPO="https://github.com/carvel-dev/sops"
+TOOL_NAME="sops"
+TOOL_TEST="sops --version"
 
 sort_versions() { /* ... */ }
 
@@ -92,7 +94,7 @@ download_release() {
  local version filename url
  version="$1"
  filename="$2"
- url="$GH_REPO/releases/download/v${version}/ytt-$(get_platform)-$(get_arch)"
+ url="$GH_REPO/releases/download/v${version}/sops-$(get_platform)-$(get_arch)"
  echo "* Downloading $TOOL_NAME release $version..."
  curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
@@ -100,7 +102,7 @@ download_release() {
 
 === bin/install
 
-[source,language="bash [1-3|11-13]"]
+[source,bash,highlight=1-3|11-13]
 ----
 #bin/install
 chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
@@ -120,7 +122,7 @@ install_version() {
 
 === list-all
 
-[source,language="bash [1-2|7-13|5]"]
+[source,bash,highlight=1-2|7-13|5]
 ----
 # bin/list-all
 list_all_versions | sort_versions | xargs echo
@@ -139,18 +141,18 @@ list_github_tags() {
 
 === latest-stable
 
-[source,language="bash []"]
+[source,bash%linenums]
 ----
 # bin/latest-stable
 redirect_url=$(curl -sI "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
 ----
 
-[source,language="bash [4]"]
+[source,bash,highlight=4]
 ----
 $ curl "$GH_REPO/releases/latest"
 HTTP/2 302
 server: GitHub.com
-location: https://github.com/carvel-dev/ytt/releases/tag/v0.48.0
+location: https://github.com/carvel-dev/sops/releases/tag/v0.48.0
 ----
 
 [.notes]
@@ -175,7 +177,7 @@ image::asdf_scripts.png[alt='scripts disponibles']
 
 == Testons ça
 
-<https://github.com/sylvainmetayer/asdf-ytt>
+<https://github.com/sylvainmetayer/asdf-sops>
 
 [%linenums,bash]
 ----
