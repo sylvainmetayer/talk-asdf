@@ -470,6 +470,10 @@ npx -&gt; ../lib/node_modules/npm/bin/npx-cli.js</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Le dossier ~/.asdf/shims contient les binaires des versions actuelles.
 Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon le dossier ~/.tool-versions&#8230;&#8203;) la version à utiliser.
 Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/&lt;tool&gt;/&lt;version&gt;/bin/&lt;bin&gt;</p></div></aside></div></section>
+<section id="_mise_à_jour_dun_plugin"><h2>Mise à jour d&#8217;un plugin</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">asdf plugin-update &lt;plugin-name&gt;
+asdf plugin-update --all</code></pre></div></div></div></section>
+<section id="_mise_à_jour_dasdf"><h2>Mise à jour d&#8217;asdf</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">asdf update</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Met à jour vers la dernière version stable d&#8217;asdf (dernière version tag)</p></li><li><p>Permet d&#8217;avoir accès au bugfix / nouvelles fonctionnalités /&#8230;&#8203;</p></li></ul></div></aside></div></section>
 <section id="_démo"><h2>Démo</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">./1-usage.sh</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Préciser que les démos seront avec node, mais qu&#8217;asdf permet de gérer terraform, age, &#8230;&#8203;</p></div></aside></div></section>
 <section id="_et_voilà"><h2>Et voilà !</h2><div class="slide-content"><div class="imageblock"><img src="images/one_ring.png" alt="One to rule them all" width="20%"></div></div></section>
@@ -564,12 +568,18 @@ location: https://github.com/carvel-dev/sops/releases/tag/v0.48.0</code></pre></
 <section id="_testons_ça"><h2>Testons ça</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/sylvainmetayer/asdf-sops" class="bare">https://github.com/sylvainmetayer/asdf-sops</a></p></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ ./2-plugin-demo.sh</code></pre></div></div></div></section>
 <section><section id="_gérer_vos_plugins_avec_un_plugin"><h2>Gérer vos plugins&#8230;&#8203; avec un plugin ?</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-community/asdf-plugin-manager" class="bare">https://github.com/asdf-community/asdf-plugin-manager</a></p></div><div class="imageblock"><img src="images/inception.webp" alt="Inception"></div></div></section><section id="_pourquoi"><h2>Pourquoi ?</h2><div class="slide-content"><div class="paragraph"><p>TODO Diagram plugin-evil-sops</p></div>
-<aside class="notes"><div class="ulist"><ul><li><p>Contrôle sur la provenance des plugins</p></li><li><p>Facilité d&#8217;installation des plugins pour usage interne</p></li><li><p>Maitrise des montées de versions</p></li></ul></div></aside></div></section><section id="_comment"><h2>Comment ?</h2><div class="slide-content"><div class="paragraph"><p>installation plugin</p></div></div></section><section id="_démo_2"><h2>Démo</h2><div class="slide-content"><aside class="notes"><div class="ulist"><ul><li><p>Sécurité</p></li><li><p>Mise à jour</p></li></ul></div></aside>
-<div class="paragraph"><p>TODO Démo avec un plugin-evil-sops
-== Pour aller plus loin</p></div>
-<div class="paragraph"><p><a href="https://asdf-vm.com/" class="bare">https://asdf-vm.com/</a></p></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Contrôle sur la provenance des plugins</p></li><li><p>Facilité d&#8217;installation des plugins pour usage interne</p></li><li><p>Maitrise des montées de versions</p></li></ul></div></aside></div></section><section id="_comment"><h2>Comment ?</h2><div class="slide-content"><div class="paragraph"><p>installation plugin</p></div></div></section><section id="_plugin_versions"><h2>.plugin-versions</h2></section><section id="_tout_dabord_définir"><h2>Tout d&#8217;abord, définir</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source"># ou dans votre projet
+asdf info | grep 'INSTALLED PLUGINS:' -A 100 | sed 1,2d &gt; .plugin-versions
+
+
+asdf-plugin-manager export
+# equivalent à
+bat .plugin-versions</code></pre></div></div></div></section><section id="_usage"><h2>Usage</h2><div class="slide-content"><div class="paragraph"><p>asdf-plugin-manager add-all
+asdf-plugin-manager update-all</p></div></div></section><section id="_limite"><h2>Limite</h2><div class="slide-content"><div class="admonitionblock warning"><table><tr><td class="icon"><img src="./images/icons/warning.png"></td><td class="content"><a href="https://github.com/asdf-community/asdf-plugin-manager/issues/48" class="bare">https://github.com/asdf-community/asdf-plugin-manager/issues/48</a></td></tr></table></div>
+<div class="paragraph"><p>Add <code>export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true</code> to your bashrc if you intend/want to ensure different remote are updated.</p></div></div></section><section id="_démo_2"><h2>Démo</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">./3-plugin-manager-demo.sh</code></pre></div></div></div></section></section>
+<section id="_pour_aller_plus_loin"><h2>Pour aller plus loin</h2><div class="slide-content"><div class="paragraph"><p><a href="https://asdf-vm.com/" class="bare">https://asdf-vm.com/</a></p></div>
 <aside class="notes"><div class="paragraph"><p><a href="https://github.com/jdx/rtx" class="bare">https://github.com/jdx/rtx</a>
-<a href="https://devenv.sh" class="bare">https://devenv.sh</a></p></div></aside></div></section></section>
+<a href="https://devenv.sh" class="bare">https://devenv.sh</a></p></div></aside></div></section>
 <section id="_merci"><h2>Merci !</h2><div class="slide-content"><div class="paragraph"><p>TODO QR Code Openfeedback / Slides</p></div></div></section></div></div><script src="reveal.js/dist/reveal.js"></script><script>Array.prototype.slice.call(document.querySelectorAll('.slides section')).forEach(function(slide) {
   if (slide.getAttribute('data-background-color')) return;
   // user needs to explicitly say he wants CSS color to override otherwise we might break custom css or theme (#226)
