@@ -36,4 +36,27 @@ pe "bat /home/node/.asdf/plugins/sops/bin/evil.sh"
 
 p "Comment prévenir cela ?"
 
-# TODO Utilisation de plugin-manager
+p "asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git"
+p "asdf plugin update asdf-plugin-manager v1.3.1"
+p "asdf install asdf-plugin-manager 1.3.1"
+pe "asdf global asdf-plugin-manager 1.3.1"
+
+pe "asdf-plugin-manager version"
+
+cd plugin-manager || exit 1
+
+pe "asdf-plugin-manager export"
+pe "bat .tool-versions"
+pe "bat .plugin-versions"
+pe "asdf-plugin-manager add-all"
+pe "asdf-plugin-manager export"
+
+p "Warning, you need to have the following in your bashrc for plugin to be updated if already present"
+
+echo "export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true >> ~/.bashrc"
+pe "asdf-plugin-manager add sops"
+pe "asdf-plugin-manager export"
+
+p "bat ~/.bashrc -m 117"
+
+pe "asdf-plugin-manager update sops"

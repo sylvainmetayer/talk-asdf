@@ -10,9 +10,16 @@ image::inception.webp[alt="Inception"]
 
 TODO Diagram plugin-evil-sops
 
+[.notes]
+****
+- Contrôle sur la provenance des plugins
+- Facilité d'installation des plugins pour usage interne
+- Maitrise des montées de versions
+****
+
 === Comment ?
 
-instlalation plugin
+installation plugin
 
 === Démo
 

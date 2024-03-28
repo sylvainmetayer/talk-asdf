@@ -1,0 +1,2 @@
+# plugin-name  git-url                               git-ref (hash, tag, or branch)
+sops           https://github.com/feniix/asdf-sops   master

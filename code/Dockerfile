@@ -3,7 +3,9 @@ FROM node:21-bookworm
 
 # https://www.ivarch.com/programs/pv.shtml
 
-RUN apt-get update && apt-get install -y pv curl git bat
+RUN apt-get update && apt-get install -y pv curl git bash grep util-linux sed git && \
+    wget https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-musl_0.24.0_amd64.deb && \
+    dpkg -i bat-musl_0.24.0_amd64.deb
 
 USER node
 WORKDIR /home/node
@@ -23,3 +25,7 @@ RUN ssh-keygen -b 1024 -f ~/.ssh/id_rsa -q -N ""
 
 COPY --chown=node:node . .
 ENTRYPOINT ["/usr/bin/bash"]
+
+USER root
+RUN apt install -y bsdmainutils
+USER node
