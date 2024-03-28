@@ -52,8 +52,9 @@ pe "asdf-plugin-manager add-all"
 pe "asdf-plugin-manager export"
 
 p "Warning, you need to have the following in your bashrc for plugin to be updated if already present"
+pe "echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc"
+export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true
 
-echo "export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true >> ~/.bashrc"
 pe "asdf-plugin-manager add sops"
 pe "asdf-plugin-manager export"
 

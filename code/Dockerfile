@@ -3,7 +3,7 @@ FROM node:21-bookworm
 
 # https://www.ivarch.com/programs/pv.shtml
 
-RUN apt-get update && apt-get install -y pv curl git bash grep util-linux sed git && \
+RUN apt-get update && apt-get install -y pv curl git bash grep util-linux sed vim git && \
     wget https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-musl_0.24.0_amd64.deb && \
     dpkg -i bat-musl_0.24.0_amd64.deb
 

@@ -21,12 +21,38 @@ TODO Diagram plugin-evil-sops
 
 installation plugin
 
+=== .plugin-versions
+
+=== Tout d'abord, définir
+
+[%linenums,source,bash]
+----
+# ou dans votre projet
+asdf info | grep 'INSTALLED PLUGINS:' -A 100 | sed 1,2d > .plugin-versions
+
+
+asdf-plugin-manager export
+# equivalent à
+bat .plugin-versions
+
+----
+
+=== Usage
+
+asdf-plugin-manager add-all
+asdf-plugin-manager update-all
+
+=== Limite
+
+[WARNING]
+https://github.com/asdf-community/asdf-plugin-manager/issues/48
+
+Add `export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true` to your bashrc if you intend/want to ensure different remote are updated.
+
 === Démo
 
-[.notes]
-****
-- Sécurité
-- Mise à jour
-****
+[source,bash]
+----
+./3-plugin-manager-demo.sh
+----
 
-TODO Démo avec un plugin-evil-sops

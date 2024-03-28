@@ -91,3 +91,24 @@ Le dossier ~/.asdf/shims contient les binaires des versions actuelles.
 Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon le dossier ~/.tool-versions...) la version à utiliser.
 Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/<tool>/<version>/bin/<bin>
 ****
+
+== Mise à jour d'un plugin
+
+[source,bash]
+----
+asdf plugin-update <plugin-name>
+asdf plugin-update --all
+----
+
+== Mise à jour d'asdf
+
+[source,bash]
+----
+asdf update
+----
+
+[.notes]
+****
+- Met à jour vers la dernière version stable d'asdf (dernière version tag)
+- Permet d'avoir accès au bugfix / nouvelles fonctionnalités /...
+****
