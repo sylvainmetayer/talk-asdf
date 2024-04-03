@@ -1,4 +1,7 @@
+[.transparency]
 == Création d'un plugin en moins de 10min
+
+image::devoxx/DevoxxFR2024_0046.jpg[background, size=fill]
 
 image::clock.webp[alt='Vite, vite !']
 
@@ -201,7 +204,10 @@ image::asdf_scripts_2.png[alt='scripts disponibles']
 link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts disponibles]
 --
 
+[.transparency]
 == Testons ça
+
+image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 <https://github.com/sylvainmetayer/asdf-sops>
 

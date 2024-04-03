@@ -24,14 +24,17 @@ Et il faut pourtant utiliser les 2
 [.transparency]
 == Contexte
 
-image::devoxx/DevoxxFR2024_0057.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 [source,bash]
 ----
 ./0-error.sh
 ----
 
+[.transparency]
 == Solution
+
+image::devoxx/DevoxxFR2024_0011.jpg[background, size=fill]
 
 image::asdf.png[alt='']
 

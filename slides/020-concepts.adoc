@@ -42,7 +42,10 @@ nodejs 14.21.3
 - On peut/doit commit ce fichier au même titre que le gitignore
 ****
 
+[.transparency]
 === Installation d'une version
+
+image::devoxx/DevoxxFR2024_0035.jpg[background, size=cover]
 
 [source,shell]
 ----
@@ -52,6 +55,8 @@ asdf install
 ----
 
 === Local vs Global
+
+// image::devoxx/DevoxxFR2024_0048.jpg[background, size=cover]
 
 [source,text]
 ----
@@ -96,16 +101,10 @@ Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon
 Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/<tool>/<version>/bin/<bin>
 ****
 
-// Peu de plus-value, on enlève
-// == Mise à jour d'un plugin
-//
-// [source,bash]
-// ----
-// asdf plugin-update <plugin-name>
-// asdf plugin-update --all
-// ----
-
+[.transparency]
 === Mise à jour d'asdf
+
+image::devoxx/DevoxxFR2024_0030.jpg[background, size=cover]
 
 [source,bash]
 ----

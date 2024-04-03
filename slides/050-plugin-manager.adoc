@@ -86,7 +86,10 @@ https://github.com/asdf-community/asdf-plugin-manager/issues/48
 
 `echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc`
 
+[.transparency]
 === Démo
+
+image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 [source,bash]
 ----

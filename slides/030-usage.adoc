@@ -1,4 +1,7 @@
+[.transparency]
 == Démo
+
+image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 [%linenums,bash]
 ----
