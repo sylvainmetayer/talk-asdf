@@ -12,5 +12,5 @@ echo "Battery saver"
 
 kubectx -u || true
 
-gnome-terminal --window-with-profile=demo --full-screen --working-directory "$(pwd)/code"
+gnome-terminal --window-with-profile=demo-sombre --full-screen --working-directory "$(pwd)/code"
 firefox -P work 'https://asdf.talks.sylvain.dev/'  'http://localhost:8000'

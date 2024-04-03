@@ -168,10 +168,10 @@ Si header location avec n° version présent, on prend ça comme latest, sinon o
 link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts disponibles]
 --
 
+// FIXME TODO
+
 [.column]
 --
-TODO Affichage
-
 image::asdf_scripts.png[alt='scripts disponibles']
 --
 

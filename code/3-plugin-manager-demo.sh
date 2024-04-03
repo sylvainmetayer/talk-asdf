@@ -62,9 +62,11 @@ pe "bat .plugin-versions"
 pe "asdf-plugin-manager add-all"
 pe "asdf-plugin-manager export"
 
-p "⚠️⚠️⚠️"
+p "⚠️ ⚠️ ⚠️"
 pe "echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc"
 export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true
 
 pe "asdf-plugin-manager update sops"
 pe "asdf-plugin-manager export"
+
+# TODO FIXME DEMO KO
