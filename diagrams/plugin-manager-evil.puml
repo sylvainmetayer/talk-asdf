@@ -1,0 +1,28 @@
+@startuml
+skinparam handwritten true
+skinparam sequenceMessageAlign center
+autonumber
+hide footbox
+
+actor       Developer       as user
+participant    asdf    as asdf
+participant    Plugin    as plugin
+participant    "bin/download"    as plugin_script
+entity    GitHub    as github order 100 #green
+entity    Hacker    as hacker #red
+
+user -> asdf: asdf-plugin-add sops
+user -> asdf: asdf install sops latest
+asdf -> plugin: list-latest-stable
+plugin -> asdf: 3.8.1
+asdf -> plugin : download 3.8.1
+plugin -> plugin_script
+plugin_script ->x github: Wait a minute
+plugin_script -> plugin_script: evil.sh
+note over plugin_script #FF0: 😱 RCE 😱
+
+plugin_script -> hacker: Steal your \nprecious keys
+plugin_script -> plugin: OK
+plugin -> asdf: OK
+
+@enduml

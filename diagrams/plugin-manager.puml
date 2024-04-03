@@ -1,0 +1,24 @@
+@startuml
+skinparam handwritten true
+skinparam sequenceMessageAlign center
+autonumber
+hide footbox
+
+actor       Developer       as user
+participant    asdf    as asdf
+participant    Plugin    as plugin
+participant    "bin/download"    as plugin_script
+entity    GitHub    as github order 100 #green
+
+user -> asdf: asdf-plugin-add sops
+user -> asdf: asdf install sops latest
+asdf -> plugin: list-latest-stable
+plugin -> asdf: 3.8.1
+asdf -> plugin : download 3.8.1
+plugin -> plugin_script
+plugin_script -> github: Download sops 3.8.1
+plugin_script -> plugin_script: move sops to\n $ASDF_INSTALL_PATH
+plugin_script -> plugin: OK
+plugin -> asdf: OK
+
+@enduml

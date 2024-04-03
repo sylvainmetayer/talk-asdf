@@ -3,7 +3,7 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js
 :autofit-option:
-:icons: image
+:icons!:
 :iconfont-remote!:
 :notitle:
 :revealjs_slideNumber: true
@@ -19,6 +19,13 @@
 :imagesdir: images
 :revealjs_totalTime: 30*60
 :revealjs_defaultTiming: 60
+:tip-caption: 💡
+:important-caption: 📌
+:warning-caption: ⚠️
+:caution-caption: 🚨
+:example-caption: ✏️
+
+// TODO https://docs.asciidoctor.org/asciidoc/latest/subs/apply-subs-to-blocks/
 
 @sylvain_metayer
 

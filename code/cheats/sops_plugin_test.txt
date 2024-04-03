@@ -1,7 +1,8 @@
-Location of sops plugin: /tmp/asdf.1Am7/plugins/sops
+Location of sops plugin: /tmp/asdf.BnIh/plugins/sops
 Updating sops to main
 Déjà sur 'main'
 Votre branche est à jour avec 'origin/main'.
+redirect url: https://github.com/getsops/sops/releases/tag/v3.8.1
 * Downloading sops release 3.8.1...
 sops 3.8.1 installation was successful!
 sops 3.8.1 (latest)

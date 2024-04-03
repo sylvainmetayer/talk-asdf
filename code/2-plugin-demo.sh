@@ -7,13 +7,19 @@ source ~/.bashrc
 
 p 'asdf plugin test sops https://github.com/sylvainmetayer/asdf-sops.git "sops -v"'
 
-sleep 2 && cat cheats/sops_plugin_test.txt
+sleep 1 && cat cheats/sops_plugin_test.txt
 
 p 'asdf plugin add sops https://github.com/sylvainmetayer/asdf-sops.git'
+
+wait
+clear
 
 p 'asdf list-all sops'
 
 sleep 1 && cat cheats/sops_list_all.txt
+
+wait
+clear
 
 p 'asdf install sops latest'
 
@@ -22,6 +28,9 @@ cat cheats/sops_install_latest.txt
 pei 'asdf global sops latest'
 
 pei 'sops --version'
+
+wait
+clear
 
 p 'asdf install sops 3.8.0'
 
@@ -32,5 +41,3 @@ p 'asdf shell sops 3.8.0'
 p 'sops -v'
 
 cat cheats/sops_shell_3.8.0.txt
-
-p ""

@@ -2,14 +2,27 @@
 
 <https://asdf-vm.com/>
 
-
-
 [.notes]
 ****
-https://github.com/jdx/rtx
+https://mise.jdx.dev/
 https://devenv.sh
 ****
 
+[.columns.transparency]
 == Merci !
 
-TODO QR Code Openfeedback / Slides
+// TODO Background DevoxxFR
+
+[.column]
+--
+[caption=]
+.https://asdf.talks.sylvain.dev
+image::slides_link.svg[height=300,alt='Slides']
+--
+
+[.column]
+--
+[caption=]
+.Vos retours
+image::openfeedback.svg[height=300,alt='Vos retours']
+--

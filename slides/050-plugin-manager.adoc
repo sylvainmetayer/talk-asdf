@@ -4,11 +4,21 @@ https://github.com/asdf-community/asdf-plugin-manager
 
 image::inception.webp[alt="Inception"]
 
+[%auto-animate]
 === Pourquoi ?
 
-// https://github.com/sylvainmetayer/asdf-sops-evil/commit/ef3a7bc8781d61a9bc3c33e37b118f62e73ab37e
+.En théorie
+--
+plantuml::diagrams/plugin-manager.puml[format=svg]
+--
 
-TODO Diagram plugin-evil-sops
+[%auto-animate]
+=== Pourquoi ?
+
+.En pratique...
+--
+plantuml::diagrams/plugin-manager-evil.puml[format=svg]
+--
 
 [.notes]
 ****
@@ -19,35 +29,62 @@ TODO Diagram plugin-evil-sops
 
 === Comment ?
 
-installation plugin
-
-=== .plugin-versions
-
-=== Tout d'abord, définir
+// TODO Fond Devoxx
 
 [%linenums,source,bash]
 ----
-# ou dans votre projet
-asdf info | grep 'INSTALLED PLUGINS:' -A 100 | sed 1,2d > .plugin-versions
-
-
-asdf-plugin-manager export
-# equivalent à
-bat .plugin-versions
-
+asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
+asdf plugin update asdf-plugin-manager v1.3.1
+asdf install asdf-plugin-manager 1.3.1
+asdf global asdf-plugin-manager 1.3.1
+asdf-plugin-manager version
 ----
 
+https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install
+
+=== .plugin-versions
+
+[%linenums,source,text]
+----
+include::../code/plugin-manager/.plugin-versions[]
+----
+
+// FIXME Cette slide en l'état n'est pas clair, je préfère ne pas l'inclure et la retravailler pour une prochaine fois.
+// === Tout d'abord, définir
+//
+// [%linenums,source,bash]
+// ----
+// # ou dans votre projet
+// asdf info | grep 'INSTALLED PLUGINS:' -A 100 | sed 1,2d > .plugin-versions
+// asdf-plugin-manager export
+// # equivalent à
+// bat .plugin-versions
+// ----
+
+[%auto-animate]
 === Usage
 
+[%linenums,source,text]
+----
+asdf-plugin-manager add <plugin-name>
 asdf-plugin-manager add-all
+
+asdf-plugin-manager update <plugin-name>
 asdf-plugin-manager update-all
 
-=== Limite
+asdf-plugin-manager remove <plugin-name>
+asdf-plugin-manager remove-all
+----
+
+[%auto-animate]
+=== Usage
+
+// TODO Est-ce que je dois mettre ma propre issue ??
 
 [WARNING]
 https://github.com/asdf-community/asdf-plugin-manager/issues/48
 
-Add `export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true` to your bashrc if you intend/want to ensure different remote are updated.
+`echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc`
 
 === Démo
 
@@ -55,4 +92,3 @@ Add `export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true` to your bashrc if you intend/wan
 ----
 ./3-plugin-manager-demo.sh
 ----
-

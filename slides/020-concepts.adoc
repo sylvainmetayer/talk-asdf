@@ -57,7 +57,7 @@ asdf install
 │   │   ├── code/
 │   │   │   ├── node14/
 │   │   │   │   └── .tool-versions
-│   │   │   └── node18/
+│   │   │   └── node21/
 │   │   │       └── .tool-versions
 ├── .tool-versions
 ----
@@ -79,7 +79,7 @@ $ cat ~/.asdf/shims/node
 #!/usr/bin/env bash
 exec /home/s.metayer/.asdf/bin/asdf exec "node" "$@"
 
-$ ls ~/.asdf/installs/nodejs/21.6.2/bin -al
+$ ls ~/.asdf/installs/nodejs/21.7.1/bin -al
 node
 npm -> ../lib/node_modules/npm/bin/npm-cli.js
 npx -> ../lib/node_modules/npm/bin/npx-cli.js
