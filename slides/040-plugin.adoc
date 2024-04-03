@@ -62,11 +62,13 @@ Type `yes` if you want to continue.
 ├── README.md
 ----
 
-=== lib/utils.bash
+[%notitle]
+=== !
 
 [%linenums,bash]
+.lib/utils.bash
 ----
-GH_REPO="https://github.com/carvel-dev/sops"
+GH_REPO="https://github.com/getsops/sops"
 TOOL_NAME="sops"
 TOOL_TEST="sops --version"
 
@@ -81,15 +83,22 @@ download_release() {/* ... */ }
 install_version() {/* ... */ }
 ----
 
-=== bin/download
+[%auto-animate]
+=== Téléchargement d'une version
 
-[%linenums,bash,highlight=1-3|10|12]
+[%linenums,bash]
+.bin/download
 ----
-# bin/download
 release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
+----
 
-# lib/utils.bash
+[%auto-animate]
+=== Téléchargement d'une version
+
+[%linenums,bash,highlight=5|7]
+.lib/utils.bash
+----
 download_release() {
  local version filename url
  version="$1"
@@ -100,37 +109,53 @@ download_release() {
 }
 ----
 
-=== bin/install
+[%auto-animate]
+=== Installation d'une version
 
-[source,bash,highlight=1-3|11-13]
+[%linenums,bash]
+.bin/install
 ----
-#bin/install
 chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
-install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
+install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" \
+"$ASDF_INSTALL_PATH"
+----
 
-# lib/utils.bash
+[%auto-animate]
+=== Installation d'une version
+
+[%linenums,bash,highlight=6-8]
+.lib/utils.bash
+----
 install_version() {
  local install_type="$1"
  local version="$2"
  local install_path="${3%/bin}/bin"
  mkdir -p "$install_path"
  cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
- test -x "$install_path/$TOOL_NAME" || fail "Expected $install_path/$TOOL_NAME to be executable."
+ test -x "$install_path/$TOOL_NAME" || fail \
+"Expected $install_path/$TOOL_NAME to be executable."
  echo "$TOOL_NAME $version installation was successful!"
 }
 ----
 
-=== list-all
+[.notes]
+****
+https://asdf-vm.com/plugins/create.html#environment-variables-overview
 
-[source,bash,highlight=1-2|7-13|5]
+ASDF_INSTALL_TYPE version / ref (tag ou pas)
+****
+
+=== Lister toutes les versions
+
+[%linenums,bash]
+.bin/list-all
 ----
-# bin/list-all
-list_all_versions | sort_versions | xargs echo
-
-# lib/utils.bash
+list_github_tags | sort_versions | xargs echo
+----
+[%linenums,bash,highlight=3-7|1]
+.lib/utils.bash
+----
 sort_versions() { /* regex magic */ }
-
-list_all_versions() { list_github_tags }
 
 list_github_tags() {
  git ls-remote --tags --refs "$GH_REPO" |
@@ -139,20 +164,21 @@ list_github_tags() {
 }
 ----
 
-=== latest-stable
+=== Dernière version stable
 
-[source,bash%linenums]
+[%linenums,bash]
+.bin/latest-stable
 ----
-# bin/latest-stable
-redirect_url=$(curl -sI "$GH_REPO/releases/latest" | sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
+redirect_url=$(curl -sI "$GH_REPO/releases/latest" | \
+sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
 ----
 
-[source,bash,highlight=4]
+[%linenums,bash,highlight=4]
 ----
 $ curl "$GH_REPO/releases/latest"
 HTTP/2 302
 server: GitHub.com
-location: https://github.com/carvel-dev/sops/releases/tag/v0.48.0
+location: https://github.com/getsops/sops/releases/tag/v3.8.1
 ----
 
 [.notes]
@@ -165,14 +191,14 @@ Si header location avec n° version présent, on prend ça comme latest, sinon o
 
 [.column]
 --
-link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts disponibles]
+image::asdf_scripts_1.png[alt='scripts disponibles']
 --
-
-// FIXME TODO
 
 [.column]
 --
-image::asdf_scripts.png[alt='scripts disponibles']
+image::asdf_scripts_2.png[alt='scripts disponibles']
+
+link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts disponibles]
 --
 
 == Testons ça

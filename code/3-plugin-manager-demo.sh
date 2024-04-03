@@ -38,7 +38,7 @@ p "Oups, il semblerait qu'il s'agissait bien d'un plugin malveillant.. Regardons
 wait
 clear
 
-pe "bat /home/node/.asdf/plugins/sops/bin/download"
+pe "bat -H 15:17 /home/node/.asdf/plugins/sops/bin/download "
 pe "bat /home/node/.asdf/plugins/sops/bin/evil.sh"
 
 p "Comment prévenir cela ?"
@@ -59,14 +59,19 @@ cd plugin-manager || exit 1
 pe "asdf-plugin-manager export"
 pe "bat .tool-versions"
 pe "bat .plugin-versions"
-pe "asdf-plugin-manager add-all"
+wait
+clear
+pe "asdf-plugin-manager add sops"
 pe "asdf-plugin-manager export"
+wait clear
 
-p "⚠️ ⚠️ ⚠️"
+p "⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️   "
 pe "echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc"
 export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true
 
-pe "asdf-plugin-manager update sops"
-pe "asdf-plugin-manager export"
+pe "asdf-plugin-manager add sops"
+asdf install >/dev/null 2>/dev/null
+asdf reshim >/dev/null 2>/dev/null
+pei "asdf-plugin-manager export"
 
-# TODO FIXME DEMO KO
+pe "sops"

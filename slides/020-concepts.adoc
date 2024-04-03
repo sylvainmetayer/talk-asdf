@@ -1,4 +1,4 @@
-== Plugins
+=== Plugins
 
 [source,shell]
 ----
@@ -18,10 +18,14 @@ image::community.png[alt='ASDF community plugin']
 [.notes]
 ****
 Permet l'installation d'un plugin pour gérer les versions d'un outil.
+
+Plugin Shortname Index
+
+https://asdf-vm.com/plugins/create.html#plugin-shortname-index
 ****
 
 [.transparency]
-== .tool-versions
+=== .tool-versions
 
 image::devoxx/DevoxxFR2024_0058.jpg[background, size=cover]
 
@@ -38,7 +42,7 @@ nodejs 14.21.3
 - On peut/doit commit ce fichier au même titre que le gitignore
 ****
 
-== Installation d'une version
+=== Installation d'une version
 
 [source,shell]
 ----
@@ -47,7 +51,7 @@ asdf install nodejs 14.21.3
 asdf install
 ----
 
-== Local vs Global
+=== Local vs Global
 
 [source,text]
 ----
@@ -68,7 +72,7 @@ $ asdf global <outil> <version>
 $ asdf local <outil> version>
 ----
 
-== Shims
+=== Shims
 
 [source,bash]
 ----
@@ -92,15 +96,16 @@ Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon
 Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/<tool>/<version>/bin/<bin>
 ****
 
-== Mise à jour d'un plugin
+// Peu de plus-value, on enlève
+// == Mise à jour d'un plugin
+//
+// [source,bash]
+// ----
+// asdf plugin-update <plugin-name>
+// asdf plugin-update --all
+// ----
 
-[source,bash]
-----
-asdf plugin-update <plugin-name>
-asdf plugin-update --all
-----
-
-== Mise à jour d'asdf
+=== Mise à jour d'asdf
 
 [source,bash]
 ----
