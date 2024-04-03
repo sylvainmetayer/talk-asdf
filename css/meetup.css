@@ -14,7 +14,7 @@ body::after {
     color: white;
 }
 
-.reveal section h1+div.preamble>div.paragraph>p {
+.reveal section h1 + div.preamble > div.paragraph > p {
     color: white;
 }
 
