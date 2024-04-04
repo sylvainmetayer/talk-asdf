@@ -8,10 +8,7 @@ asdf plugin-add <plugin-name> <optional-repo-url>
 [.fragment]
 --
 https://github.com/asdf-vm/asdf-plugins
---
 
-[.fragment]
---
 image::community.png[alt='ASDF community plugin']
 --
 
