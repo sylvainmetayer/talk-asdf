@@ -49,18 +49,6 @@ https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install
 include::../code/plugin-manager/.plugin-versions[]
 ----
 
-// FIXME Cette slide en l'état n'est pas clair, je préfère ne pas l'inclure et la retravailler pour une prochaine fois.
-// === Tout d'abord, définir
-//
-// [%linenums,source,bash]
-// ----
-// # ou dans votre projet
-// asdf info | grep 'INSTALLED PLUGINS:' -A 100 | sed 1,2d > .plugin-versions
-// asdf-plugin-manager export
-// # equivalent à
-// bat .plugin-versions
-// ----
-
 [%auto-animate]
 === Usage
 
