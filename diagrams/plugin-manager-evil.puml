@@ -11,7 +11,7 @@ participant    "bin/download"    as plugin_script
 entity    GitHub    as github order 100 #green
 entity    Hacker    as hacker #red
 
-user -> asdf: asdf-plugin-add sops
+user -> asdf: asdf plugin-add sops
 user -> asdf: asdf install sops latest
 asdf -> plugin: list-latest-stable
 plugin -> asdf: 3.8.1

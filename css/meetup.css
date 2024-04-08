@@ -27,6 +27,16 @@
     letter-spacing: normal;
 }
 
+.reveal section .context_error {
+    font-size: 0.6em;
+    color: red;
+}
+
+.reveal section .context_success {
+    font-size: 0.8em;
+    color: green;
+}
+
 body::after {
     content: url("../images/devoxx_logo.png");
     position: fixed;

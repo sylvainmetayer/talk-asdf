@@ -13,4 +13,5 @@ echo "Battery saver"
 kubectx -u || true
 
 gnome-terminal --window-with-profile=demo-sombre --full-screen --working-directory "$(pwd)/code"
-firefox -P work 'https://asdf.talks.sylvain.dev/'  'http://localhost:8000'
+firefox -P work 'https://asdf.talks.sylvain.dev/devoxx2024'  'http://localhost:8000'
+systemctl restart --user xremap

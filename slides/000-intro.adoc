@@ -8,8 +8,6 @@ include::001-presentation.adoc[]
 video::so_many_of_them_lotr.mp4[width=1200,opts="autoplay,loop,muted"]
 
 // TODO https://github.com/asciidoctor/asciidoctor-reveal.js/issues/523
-
-
 --
 
 [.notes]
@@ -21,15 +19,20 @@ Et on se retrouve avec des projets qui suivent niveau versions et d'autres qui r
 Et il faut pourtant utiliser les 2
 ****
 
-[.transparency]
+[.columns.transparency]
 == Contexte
 
 image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
-[source,bash]
-----
-./0-error.sh
-----
+[.column.context_success]
+--
+include::../code/0-node-21.txt[]
+--
+
+[.column.context_error.fragment]
+--
+include::../code/0-node-14.txt[]
+--
 
 [.transparency]
 == Solution

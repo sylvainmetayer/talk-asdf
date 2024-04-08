@@ -4,7 +4,7 @@
 
 asdf plugin add nodejs
 asdf install nodejs latest
-asdf install nodejs 21.7.1
+asdf install nodejs 21.7.2
 asdf install nodejs 14.21.3
 asdf global nodejs latest
 asdf plugin add sops https://github.com/sylvainmetayer/asdf-sops.git
