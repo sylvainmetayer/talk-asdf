@@ -425,8 +425,18 @@ ul.byline li + li {
 <aside class="notes"><div class="paragraph"><p>Côté devops, et programmation de manières générale, pleins d&#8217;outils qui évolue parfois vite. Trop vite.</p></div>
 <div class="paragraph"><p>Et on se retrouve avec des projets qui suivent niveau versions et d&#8217;autres qui restent sur des vieilles versions.</p></div>
 <div class="paragraph"><p>Et il faut pourtant utiliser les 2</p></div></aside></div></section>
-<section id="_contexte" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Contexte</h2><div class="slide-content">
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">./0-error.sh</code></pre></div></div></div></section>
+<section id="_contexte" class="columns transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Contexte</h2><div class="slide-content">
+<div class="openblock column context_success"><div class="content"><div class="paragraph"><p>node index.js</p></div>
+<div class="paragraph"><p>found 0 vulnerabilities
+Node 21.7.2 : Bonjour DevoxxFR !</p></div></div></div>
+<div class="openblock column context_error fragment"><div class="content"><div class="paragraph"><p>node index.js</p></div>
+<div class="paragraph"><p>npm ERR! code EBADENGINE
+npm ERR! engine Unsupported engine
+npm ERR! engine Not compatible with your version of node/npm: node14@1.0.0
+npm ERR! notsup Not compatible with your version of node/npm: node14@1.0.0
+npm ERR! notsup Required: {"node":"&gt;=14.0.0 &lt;15.0.0"}
+npm ERR! notsup Actual:   {"npm":"10.5.0","node":"v21.7.2"}</p></div>
+<div class="paragraph"><p>npm ERR! A complete log of this run can be found in: /home/s.metayer/.npm/_logs/2024-04-08T15_19_44_480Z-debug-0.log</p></div></div></div></div></section>
 <section id="_solution" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0011.jpg" data-background-size="fill"><h2>Solution</h2><div class="slide-content">
 <div class="imageblock"><img src="images/asdf.png" alt=""></div>
 <aside class="notes"><div class="olist arabic"><ol class="arabic"><li><p>Installation</p></li><li><p>Concepts</p></li><li><p>Usage</p></li><li><p>Création d&#8217;un plugin</p></li></ol></div></aside></div></section>
@@ -444,23 +454,21 @@ nodejs 14.21.3</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">asdf install &lt;plugin&gt; &lt;version&gt;
 asdf install nodejs 14.21.3
 asdf install</code></pre></div></div></div></section><section id="_local_vs_global"><h2>Local vs Global</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-lang="text">~/
-├── slides/
-│   ├── assets/
-│   │   ├── code/
-│   │   │   ├── node14/
-│   │   │   │   └── .tool-versions
-│   │   │   └── node21/
-│   │   │       └── .tool-versions
+├── code/
+│   ├── node14/
+│   │   └── .tool-versions
+│   └── node21/
+│       └── .tool-versions
 ├── .tool-versions</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ asdf global &lt;outil&gt; &lt;version&gt;
-$ asdf local &lt;outil&gt; version&gt;</code></pre></div></div></div></section><section id="_shims"><h2>Shims</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ ls ~/.asdf/shims/
+$ asdf local &lt;outil&gt; &lt;version&gt;</code></pre></div></div></div></section><section id="_shims"><h2>Shims</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ ls ~/.asdf/shims/
 node                      npm                       npx
 
 $ cat ~/.asdf/shims/node
 #!/usr/bin/env bash
 exec /home/s.metayer/.asdf/bin/asdf exec "node" "$@"
 
-$ ls ~/.asdf/installs/nodejs/21.7.1/bin -al
+$ ls ~/.asdf/installs/nodejs/21.7.2/bin -al
 node
 npm -&gt; ../lib/node_modules/npm/bin/npm-cli.js
 npx -&gt; ../lib/node_modules/npm/bin/npx-cli.js</code></pre></div></div>
