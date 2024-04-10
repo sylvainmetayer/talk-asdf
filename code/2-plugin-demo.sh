@@ -5,39 +5,29 @@ clear
 
 source ~/.bashrc
 
-p 'asdf plugin test sops https://github.com/sylvainmetayer/asdf-sops.git "sops -v"'
+p 'asdf plugin test go https://github.com/sylvainmetayer/asdf-go.git "go version"'
 
-sleep 1 && cat cheats/sops_plugin_test.txt
+sleep 1 && cat cheats/go_plugin_test.txt
 
-p 'asdf plugin add sops https://github.com/sylvainmetayer/asdf-sops.git'
+asdf plugin-remove go 2>/dev/null >/dev/null
+
+pe 'asdf plugin add go https://github.com/sylvainmetayer/asdf-go.git'
+
+clear
+
+export ASDF_GO_DEMO_DOWNLOADED_RELEASES_DIRECTORY=/opt/asdf-demo-src/
+
+pe 'asdf install go latest'
+
+pei 'asdf global go latest'
+
+pei 'go version'
 
 wait
 clear
 
-p 'asdf list-all sops'
+cd go-old
+pei "echo 'go 1.16.15' > .tool-versions"
+pe 'asdf install go'
 
-sleep 1 && cat cheats/sops_list_all.txt
-
-wait
-clear
-
-p 'asdf install sops latest'
-
-cat cheats/sops_install_latest.txt
-
-pei 'asdf global sops latest'
-
-pei 'sops --version'
-
-wait
-clear
-
-p 'asdf install sops 3.8.0'
-
-cat cheats/sops_install_3.8.0.txt
-
-# FIXME Shell integration is broken with demo-magic, need to fake it.
-p 'asdf shell sops 3.8.0'
-p 'sops -v'
-
-cat cheats/sops_shell_3.8.0.txt
+pei "go run main.go"

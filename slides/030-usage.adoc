@@ -10,7 +10,7 @@ image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 [.notes]
 ****
-Préciser que les démos seront avec node, mais qu'asdf permet de gérer terraform, age, ...
+Préciser que les démos seront avec go, mais qu'asdf permet de gérer terraform, age, ...
 ****
 
 === Et voilà !

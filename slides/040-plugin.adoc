@@ -1,28 +1,21 @@
 [.transparency]
 == Création d'un plugin en moins de 10min
 
-image::devoxx/DevoxxFR2024_0046.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0046.jpg[background,size=fill]
 
-image::clock.webp[alt='Vite, vite !']
+image::clock_2.png[alt='Vite, vite !',width=40%]
 
 === Présentation de l'outil
 
-`sops` : Simple and flexible tool for managing secretsfootnote:[link:https://sops.talks.sylvain.dev[Instant Pub] !]
+`go`
 
-<https://github.com/getsops/sops>
+<https://github.com/golang/go>
 
 === Template
 
 <https://github.com/asdf-vm/asdf-plugin-template>
 
 image::template.png[alt='Template Github']
-
-[%linenums,bash]
-----
-asdf plugin-add github-cli && asdf install github-cli latest && asdf global github-cli latest
-gh repo create asdf-sops --template asdf-vm/asdf-plugin-template --public
-git clone git@github.com:sylvainmetayer/asdf-sops.git
-----
 
 === Création du template
 
@@ -31,16 +24,16 @@ git clone git@github.com:sylvainmetayer/asdf-sops.git
 [%linenums,bash]
 ----
 [...]
-Setting up plugin: asdf-sops
+Setting up plugin: asdf-go
 
 author:        Sylvain
-plugin repo:   https://github.com/sylvainmetayer/asdf-sops
+plugin repo:   https://github.com/sylvainmetayer/asdf-go
 license:       https://choosealicense.com/licenses/mit/
 
 
-sops github:   https://github.com/getsops/sops
-sops docs:     https://github.com/getsops/sops
-sops test:     `sops -v`
+go github:   https://github.com/golang/go
+go docs:     https://github.com/golang/go
+go test:     `go version`
 After confirmation, the `main` will be replaced with the generated
 template using the above information. Please ensure all seems correct.
 Type `yes` if you want to continue.
@@ -71,13 +64,11 @@ Type `yes` if you want to continue.
 [%linenums,bash]
 .lib/utils.bash
 ----
-GH_REPO="https://github.com/getsops/sops"
-TOOL_NAME="sops"
-TOOL_TEST="sops --version"
+GH_REPO="https://github.com/golang/go"
+TOOL_NAME="go"
+TOOL_TEST="go version"
 
 sort_versions() { /* ... */ }
-
-list_github_tags() { /* ... */ }
 
 list_all_versions() {/* ... */ }
 
@@ -89,54 +80,69 @@ install_version() {/* ... */ }
 [%auto-animate]
 === Téléchargement d'une version
 
+// include::https://raw.githubusercontent.com/sylvainmetayer/asdf-go/main/bin/download[]
+
 [%linenums,bash]
 .bin/download
 ----
-release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
+release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION.tar.gz"
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
+tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1
+rm "$release_file"
 ----
 
 [%auto-animate]
 === Téléchargement d'une version
 
-[%linenums,bash,highlight=5|7]
+[%linenums,bash,highlight=9|10]
 .lib/utils.bash
 ----
 download_release() {
- local version filename url
- version="$1"
- filename="$2"
- url="$GH_REPO/releases/download/v${version}/sops-$(get_platform)-$(get_arch)"
- echo "* Downloading $TOOL_NAME release $version..."
- curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
+  local version filename url
+  version="$1"
+  filename="$2"
+  local platform=""
+  local arch=""
+  platform=$(get_platform)
+  arch=$(get_arch)
+  url="https://dl.google.com/go/go${version}.${platform}-${arch}.tar.gz"
+  curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 ----
 
 [%auto-animate]
 === Installation d'une version
 
-[%linenums,bash]
+// TODO Mettre un id ici et un width dans le css à 150% pour avoir toute la ligne
+
+[%linenums,bash,id=install_version]
 .bin/install
 ----
-chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
-install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" \
-"$ASDF_INSTALL_PATH"
+install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
 ----
+
+[.notes]
+****
+https://asdf-vm.com/plugins/create.html#environment-variables-overview
+
+ASDF_INSTALL_TYPE version / ref (tag ou pas)
+****
 
 [%auto-animate]
 === Installation d'une version
 
-[%linenums,bash,highlight=6-8]
+[%linenums,bash,highlight=6-9]
 .lib/utils.bash
 ----
 install_version() {
  local install_type="$1"
  local version="$2"
- local install_path="${3%/bin}/bin"
+ local install_path="${3%/bin}"
  mkdir -p "$install_path"
  cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
- test -x "$install_path/$TOOL_NAME" || fail \
-"Expected $install_path/$TOOL_NAME to be executable."
+ local tool_cmd
+ tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+ test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
  echo "$TOOL_NAME $version installation was successful!"
 }
 ----
@@ -153,17 +159,16 @@ ASDF_INSTALL_TYPE version / ref (tag ou pas)
 [%linenums,bash]
 .bin/list-all
 ----
-list_github_tags | sort_versions | xargs echo
+list_all_versions | sort_versions
 ----
-[%linenums,bash,highlight=3-7|1]
+
+[%linenums,bash,highlight=4|1]
 .lib/utils.bash
 ----
 sort_versions() { /* regex magic */ }
 
 list_github_tags() {
- git ls-remote --tags --refs "$GH_REPO" |
-  grep -o 'refs/tags/.*' | cut -d/ -f3- |
-  sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
+  git ls-remote --tags --refs "$GH_REPO" "go*"
 }
 ----
 
@@ -172,20 +177,24 @@ list_github_tags() {
 [%linenums,bash]
 .bin/latest-stable
 ----
-redirect_url=$(curl -sI "$GH_REPO/releases/latest" | \
-sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")
+curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version' | cut -d "o" -f 2
 ----
 
-[%linenums,bash,highlight=4]
+[%linenums,bash]
 ----
-$ curl "$GH_REPO/releases/latest"
-HTTP/2 302
-server: GitHub.com
-location: https://github.com/getsops/sops/releases/tag/v3.8.1
+$ curl -s https://go.dev/dl/?mode=json | jq
+[
+  {
+    "version": "go1.22.2",
+  # [...]
+  }
+]
 ----
 
 [.notes]
 ****
+Si Github, possible de s'appuyer sur API github releases/latest
+
 Si header location avec n° version présent, on prend ça comme latest, sinon on prend la première du `list-all`
 ****
 
@@ -205,13 +214,25 @@ link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts d
 --
 
 [.transparency]
-== Testons ça
+== Testons ça ...?
 
-image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0053.jpg[background,size=fill]
 
-<https://github.com/sylvainmetayer/asdf-sops>
+<https://github.com/sylvainmetayer/asdf-go>
+
+// [%linenums,bash]
+// ----
+// $ ./2-plugin-demo.sh
+// ----
 
 [%linenums,bash]
 ----
-$ ./2-plugin-demo.sh
+asdf plugin test go https://github.com/sylvainmetayer/asdf-go.git "go version"
 ----
+
+[.notes]
+****
+Le plugin go installé présenté dans la première démo est déjà ce plugin.
+
+Présenter commande de test
+****

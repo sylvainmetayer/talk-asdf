@@ -1,9 +1,0 @@
-Trying to update node-build... ok
-Downloading node-v14.21.3-linux-x64.tar.gz...
--> https://nodejs.org/dist/v14.21.3/node-v14.21.3-linux-x64.tar.gz
-
-WARNING: node-v14.21.3-linux-x64 is in LTS Maintenance mode and nearing its end of life.
-It only receives *critical* security updates, *critical* bug fixes and documentation updates.
-
-Installing node-v14.21.3-linux-x64...
-Installed node-v14.21.3-linux-x64 to /home/s.metayer/.asdf/installs/nodejs/14.21.3

@@ -11,11 +11,11 @@ participant    "bin/download"    as plugin_script
 entity    GitHub    as github order 100 #green
 entity    Hacker    as hacker #red
 
-user -> asdf: asdf plugin-add sops
-user -> asdf: asdf install sops latest
+user -> asdf: asdf plugin-add go
+user -> asdf: asdf install go latest
 asdf -> plugin: list-latest-stable
-plugin -> asdf: 3.8.1
-asdf -> plugin : download 3.8.1
+plugin -> asdf: 1.22.2
+asdf -> plugin : download 1.22.2
 plugin -> plugin_script
 plugin_script ->x github: Wait a minute
 plugin_script -> plugin_script: evil.sh

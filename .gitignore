@@ -11,7 +11,6 @@ code/age.key
 code/*.secrets.yaml
 code/recipients/secrets.*.yaml
 code/recipients/*.key
-code/recipients/.sops.yaml
 
 code/demo-magic.sh
 

@@ -1,0 +1,5 @@
+$ go run main.go
+
+Need go version between 1.16.0 and 1.16.15
+
+exit status 1

@@ -25,11 +25,10 @@ plantuml::diagrams/plugin-manager-evil.puml[format=svg]
 - Contrôle sur la provenance des plugins
 - Facilité d'installation des plugins pour usage interne
 - Maitrise des montées de versions
+- Comme docker attention, ce n'est pas votre code qui tourne !!
 ****
 
 === Comment ?
-
-// TODO Fond Devoxx
 
 [%linenums,source,bash]
 ----
@@ -41,6 +40,11 @@ asdf-plugin-manager version
 ----
 
 https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install
+
+[quote]
+--
+[...] the only plugin you need to validate manually, and the .plugin-versions file will be the source of truth for asdf plugins. Yes, this is an asdf plugin to manage asdf plugins!
+--
 
 === .plugin-versions
 

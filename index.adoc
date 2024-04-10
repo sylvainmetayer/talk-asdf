@@ -19,6 +19,7 @@
 :imagesdir: images
 :revealjs_totalTime: 30*60
 :revealjs_defaultTiming: 60
+:figure-caption!:
 :tip-caption: 💡
 :important-caption: 📌
 :warning-caption: ⚠️

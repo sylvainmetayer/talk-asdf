@@ -1,0 +1,3 @@
+$ go run main.go
+
+Hello, DevoxxFR ! Go version :1.22.2

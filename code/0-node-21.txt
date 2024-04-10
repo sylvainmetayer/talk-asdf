@@ -1,4 +1,0 @@
-node index.js
-
-found 0 vulnerabilities
-Node 21.7.2 : Bonjour DevoxxFR !

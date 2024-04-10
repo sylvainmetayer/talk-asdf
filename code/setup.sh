@@ -2,17 +2,19 @@
 
 . "$HOME/.asdf/asdf.sh"
 
-asdf plugin add nodejs
-asdf install nodejs latest
-asdf install nodejs 21.7.2
-asdf install nodejs 14.21.3
-asdf global nodejs latest
-asdf plugin add sops https://github.com/sylvainmetayer/asdf-sops.git
-asdf install sops latest
-asdf install sops 3.8.0
+# pre-download release file
+ASDF_GO_DEMO_DOWNLOADED_RELEASES_DIRECTORY=/opt/asdf-demo-src/
+for VERSION in "1.16.15" "1.22.2"
+do
+    echo "pre-download go tar.gz version $VERSION"
+    curl -sL -o $ASDF_GO_DEMO_DOWNLOADED_RELEASES_DIRECTORY/$VERSION.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
+done
+
+
+asdf plugin add go https://github.com/sylvainmetayer/asdf-go.git
 
 asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
 asdf plugin update asdf-plugin-manager v1.3.1
 asdf install asdf-plugin-manager 1.3.1
 asdf global asdf-plugin-manager 1.3.1
-# asdf-plugin-manager version
+
