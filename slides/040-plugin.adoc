@@ -174,7 +174,7 @@ list_github_tags() {
 
 === Dernière version stable
 
-[%linenums,bash]
+[%linenums,bash,id=latest_stable]
 .bin/latest-stable
 ----
 curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version' | cut -d "o" -f 2
@@ -225,7 +225,7 @@ image::devoxx/DevoxxFR2024_0053.jpg[background,size=fill]
 // $ ./2-plugin-demo.sh
 // ----
 
-[%linenums,bash]
+[%linenums,bash,id=demo_plugin]
 ----
 asdf plugin test go https://github.com/sylvainmetayer/asdf-go.git "go version"
 ----
