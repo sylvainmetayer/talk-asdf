@@ -27,13 +27,15 @@
     letter-spacing: normal;
 }
 
+.reveal section #install_version {
+    width: 110%;
+}
+
 .reveal section .context_error {
-    font-size: 0.6em;
     color: red;
 }
 
 .reveal section .context_success {
-    font-size: 0.8em;
     color: green;
 }
 

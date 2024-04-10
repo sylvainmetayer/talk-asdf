@@ -422,79 +422,71 @@ ul.byline li + li {
 <div class="paragraph"><p>Tech Lead <a href="https://www.groupeonepoint.com/fr/">@Onepoint</a></p></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Conteneur / k8s quotidien, outils cloud évoluent rapidement et sont nombreux</p></div></aside></div></section>
 <section id="_problématique"><h2>Problématique</h2><div class="slide-content"><div class="openblock column"><div class="content"><div class="videoblock"><div class="title">There are so many of them&#8230;&#8203;</div><video src="images/so_many_of_them_lotr.mp4" width="1200" height="100%" data-autoplay controls loop>Your browser does not support the video tag.</video></div></div></div>
-<aside class="notes"><div class="paragraph"><p>Côté devops, et programmation de manières générale, pleins d&#8217;outils qui évolue parfois vite. Trop vite.</p></div>
+<aside class="notes"><div class="paragraph"><p>Côté devops, et programmation de manières générale, pleins d&#8217;outils qui évolue parfois vite, avec autant d&#8217;outils que de distribution linux.</p></div>
 <div class="paragraph"><p>Et on se retrouve avec des projets qui suivent niveau versions et d&#8217;autres qui restent sur des vieilles versions.</p></div>
 <div class="paragraph"><p>Et il faut pourtant utiliser les 2</p></div></aside></div></section>
 <section id="_contexte" class="columns transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Contexte</h2><div class="slide-content">
-<div class="openblock column context_success"><div class="content"><div class="paragraph"><p>node index.js</p></div>
-<div class="paragraph"><p>found 0 vulnerabilities
-Node 21.7.2 : Bonjour DevoxxFR !</p></div></div></div>
-<div class="openblock column context_error fragment"><div class="content"><div class="paragraph"><p>node index.js</p></div>
-<div class="paragraph"><p>npm ERR! code EBADENGINE
-npm ERR! engine Unsupported engine
-npm ERR! engine Not compatible with your version of node/npm: node14@1.0.0
-npm ERR! notsup Not compatible with your version of node/npm: node14@1.0.0
-npm ERR! notsup Required: {"node":"&gt;=14.0.0 &lt;15.0.0"}
-npm ERR! notsup Actual:   {"npm":"10.5.0","node":"v21.7.2"}</p></div>
-<div class="paragraph"><p>npm ERR! A complete log of this run can be found in: /home/s.metayer/.npm/_logs/2024-04-08T15_19_44_480Z-debug-0.log</p></div></div></div></div></section>
+<div class="openblock column context_success"><div class="content"><div class="paragraph"><p>$ go run main.go</p></div>
+<div class="paragraph"><p>Hello, DevoxxFR ! Go version :1.22.2</p></div></div></div>
+<div class="openblock column context_error fragment"><div class="content"><div class="paragraph"><p>$ go run main.go</p></div>
+<div class="paragraph"><p>Need go version between 1.16.0 and 1.16.15</p></div>
+<div class="paragraph"><p>exit status 1</p></div></div></div></div></section>
 <section id="_solution" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0011.jpg" data-background-size="fill"><h2>Solution</h2><div class="slide-content">
 <div class="imageblock"><img src="images/asdf.png" alt=""></div>
 <aside class="notes"><div class="olist arabic"><ol class="arabic"><li><p>Installation</p></li><li><p>Concepts</p></li><li><p>Usage</p></li><li><p>Création d&#8217;un plugin</p></li></ol></div></aside></div></section>
 <section><section id="_installation" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0023.jpg" data-background-size="cover"><h2>Installation</h2><div class="slide-content"><div class="paragraph"><p><a href="https://asdf-vm.com/guide/getting-started.html" class="bare">https://asdf-vm.com/guide/getting-started.html</a></p></div><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 echo . "$HOME/.asdf/asdf.sh" &gt; ~/.bashrc
-echo . "$HOME/.asdf/completions/asdf.bash" &gt; ~/.bashrc</code></pre></div></div></div></section><section id="_plugins"><h2>Plugins</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">asdf plugin-add &lt;plugin-name&gt; &lt;optional-repo-url&gt;</code></pre></div></div>
-<div class="openblock fragment"><div class="content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugins" class="bare">https://github.com/asdf-vm/asdf-plugins</a></p></div>
-<div class="imageblock"><img src="images/community.png" alt="ASDF community plugin"></div></div></div>
+echo . "$HOME/.asdf/completions/asdf.bash" &gt; ~/.bashrc</code></pre></div></div></div></section><section id="_plugins" class="columns"><h2>Plugins</h2><div class="slide-content"><div class="openblock column is-one-fifths"><div class="content"><div class="paragraph"><p><code>asdf plugin-add &lt;plugin-name&gt; &lt;optional-repo-url&gt;</code></p></div></div></div>
+<div class="openblock column fragment is-four-fifths"><div class="content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugins">https://github.com/asdf-vm/asdf-plugins : +750 plugins</a></p></div>
+<div class="imageblock"><img src="images/community.png" alt="ASDF community plugin" width="500"></div>
+<div class="paragraph"><p><a href="https://sops.talks.sylvain.dev">Instant Pub 🗞️</a></p></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Permet l&#8217;installation d&#8217;un plugin pour gérer les versions d&#8217;un outil.</p></div>
 <div class="paragraph"><p>Plugin Shortname Index</p></div>
 <div class="paragraph"><p><a href="https://asdf-vm.com/plugins/create.html#plugin-shortname-index" class="bare">https://asdf-vm.com/plugins/create.html#plugin-shortname-index</a></p></div></aside></div></section><section id="_tool_versions" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0058.jpg" data-background-size="cover"><h2>.tool-versions</h2><div class="slide-content">
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">$ cat .tool-versions
-nodejs 14.21.3</code></pre></div></div>
-<aside class="notes"><div class="ulist"><ul><li><p>Définit les versions souhaitées d&#8217;un ou plusieurs outil(s).</p></li><li><p>On peut/doit commit ce fichier au même titre que le gitignore</p></li></ul></div></aside></div></section><section id="_installation_dune_version" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0035.jpg" data-background-size="cover"><h2>Installation d&#8217;une version</h2><div class="slide-content">
+go 1.16.15</code></pre></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Définit les versions souhaitées d&#8217;un ou plusieurs outil(s).</p></li><li><p>On peut/doit commit ce fichier au même titre que le gitignore</p></li><li><p>C&#8217;est TOOL VERSIONSSSSSSSSSSSSSSS</p></li></ul></div></aside></div></section><section id="_installation_dune_version" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0035.jpg" data-background-size="cover"><h2>Installation d&#8217;une version</h2><div class="slide-content">
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-lang="shell">asdf install &lt;plugin&gt; &lt;version&gt;
-asdf install nodejs 14.21.3
+asdf install go 1.16.15
 asdf install</code></pre></div></div></div></section><section id="_local_vs_global"><h2>Local vs Global</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-lang="text">~/
 ├── code/
-│   ├── node14/
+│   ├── go1.16/
 │   │   └── .tool-versions
-│   └── node21/
+│   └── go1.22/
 │       └── .tool-versions
 ├── .tool-versions</code></pre></div></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ asdf global &lt;outil&gt; &lt;version&gt;
 $ asdf local &lt;outil&gt; &lt;version&gt;</code></pre></div></div></div></section><section id="_shims"><h2>Shims</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ ls ~/.asdf/shims/
-node                      npm                       npx
+go                      gofmt
 
-$ cat ~/.asdf/shims/node
+$ cat ~/.asdf/shims/go
 #!/usr/bin/env bash
-exec /home/s.metayer/.asdf/bin/asdf exec "node" "$@"
+exec /home/s.metayer/.asdf/bin/asdf exec "go" "$@"
 
-$ ls ~/.asdf/installs/nodejs/21.7.2/bin -al
-node
-npm -&gt; ../lib/node_modules/npm/bin/npm-cli.js
-npx -&gt; ../lib/node_modules/npm/bin/npx-cli.js</code></pre></div></div>
+$ ls ~/.asdf/installs/golang/1.16.15/bin -al
+go
+gofmt</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p>Le dossier ~/.asdf/shims contient les binaires des versions actuelles.
 Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon le dossier ~/.tool-versions&#8230;&#8203;) la version à utiliser.
-Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/&lt;tool&gt;/&lt;version&gt;/bin/&lt;bin&gt;</p></div></aside></div></section><section id="_mise_à_jour_dasdf" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0030.jpg" data-background-size="cover"><h2>Mise à jour d&#8217;asdf</h2><div class="slide-content">
+Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/&lt;tool&gt;/&lt;version&gt;/bin/&lt;bin&gt;
+C&#8217;est SHIIIIIIIIIIIIMS pas shym</p></div></aside></div></section><section id="_mise_à_jour_dasdf" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0030.jpg" data-background-size="cover"><h2>Mise à jour d&#8217;asdf</h2><div class="slide-content">
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">asdf update</code></pre></div></div>
 <aside class="notes"><div class="ulist"><ul><li><p>Met à jour vers la dernière version stable d&#8217;asdf (dernière version tag)</p></li><li><p>Permet d&#8217;avoir accès au bugfix / nouvelles fonctionnalités /&#8230;&#8203;</p></li></ul></div></aside></div></section></section>
-<section><section id="_démo" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Démo</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">./1-usage.sh</code></pre></div></div><aside class="notes"><div class="paragraph"><p>Préciser que les démos seront avec node, mais qu&#8217;asdf permet de gérer terraform, age, &#8230;&#8203;</p></div></aside></div></section><section id="_et_voilà"><h2>Et voilà !</h2><div class="slide-content"><div class="imageblock"><img src="images/one_ring.png" alt="One to rule them all" width="20%"></div></div></section></section>
-<section><section id="_création_dun_plugin_en_moins_de_10min" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0046.jpg" data-background-size="fill"><h2>Création d&#8217;un plugin en moins de 10min</h2><div class="slide-content"><div class="imageblock"><img src="images/clock.webp" alt="Vite, vite !"></div></div></section><section id="_présentation_de_loutil"><h2>Présentation de l&#8217;outil</h2><div class="slide-content"><div class="paragraph"><p><code>sops</code> : Simple and flexible tool for managing secrets<sup class="footnote">[<span class="footnote" title="View footnote.">1</span>]</sup></p></div>
-<div class="paragraph"><p><a href="https://github.com/getsops/sops" class="bare">https://github.com/getsops/sops</a></p></div></div><div class="footnotes"><div class="footnote">1. <a href="https://sops.talks.sylvain.dev">Instant Pub</a> !</div></div></section><section id="_template"><h2>Template</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugin-template" class="bare">https://github.com/asdf-vm/asdf-plugin-template</a></p></div>
-<div class="imageblock"><img src="images/template.png" alt="Template Github"></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">asdf plugin-add github-cli &amp;&amp; asdf install github-cli latest &amp;&amp; asdf global github-cli latest
-gh repo create asdf-sops --template asdf-vm/asdf-plugin-template --public
-git clone git@github.com:sylvainmetayer/asdf-sops.git</code></pre></div></div></div></section><section id="_création_du_template"><h2>Création du template</h2><div class="slide-content"><div class="paragraph"><p><code>bash setup.bash</code></p></div>
+<section><section id="_démo" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Démo</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">./1-usage.sh</code></pre></div></div><aside class="notes"><div class="paragraph"><p>Préciser que les démos seront avec go, mais qu&#8217;asdf permet de gérer terraform, age, &#8230;&#8203;</p></div></aside></div></section><section id="_et_voilà"><h2>Et voilà !</h2><div class="slide-content"><div class="imageblock"><img src="images/one_ring.png" alt="One to rule them all" width="20%"></div></div></section></section>
+<section><section id="_création_dun_plugin_en_moins_de_10min" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0046.jpg" data-background-size="fill"><h2>Création d&#8217;un plugin en moins de 10min</h2><div class="slide-content"><div class="imageblock"><img src="images/clock_2.png" alt="Vite, vite !" width="40%"></div></div></section><section id="_présentation_de_loutil"><h2>Présentation de l&#8217;outil</h2><div class="slide-content"><div class="paragraph"><p><code>go</code></p></div>
+<div class="paragraph"><p><a href="https://github.com/golang/go" class="bare">https://github.com/golang/go</a></p></div></div></section><section id="_template"><h2>Template</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugin-template" class="bare">https://github.com/asdf-vm/asdf-plugin-template</a></p></div>
+<div class="imageblock"><img src="images/template.png" alt="Template Github"></div></div></section><section id="_création_du_template"><h2>Création du template</h2><div class="slide-content"><div class="paragraph"><p><code>bash setup.bash</code></p></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">[...]
-Setting up plugin: asdf-sops
+Setting up plugin: asdf-go
 
 author:        Sylvain
-plugin repo:   https://github.com/sylvainmetayer/asdf-sops
+plugin repo:   https://github.com/sylvainmetayer/asdf-go
 license:       https://choosealicense.com/licenses/mit/
 
 
-sops github:   https://github.com/getsops/sops
-sops docs:     https://github.com/getsops/sops
-sops test:     `sops -v`
+go github:   https://github.com/golang/go
+go docs:     https://github.com/golang/go
+go test:     `go version`
 After confirmation, the `main` will be replaced with the generated
 template using the above information. Please ensure all seems correct.
 Type `yes` if you want to continue.</code></pre></div></div>
@@ -508,66 +500,74 @@ Type `yes` if you want to continue.</code></pre></div></div>
 ├── lib
 │   └── utils.bash
 ├── LICENSE
-├── README.md</code></pre></div></div></div></section><section><div class="slide-content"><div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">GH_REPO="https://github.com/getsops/sops"
-TOOL_NAME="sops"
-TOOL_TEST="sops --version"
+├── README.md</code></pre></div></div></div></section><section><div class="slide-content"><div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">GH_REPO="https://github.com/golang/go"
+TOOL_NAME="go"
+TOOL_TEST="go version"
 
 sort_versions() { /* ... */ }
-
-list_github_tags() { /* ... */ }
 
 list_all_versions() {/* ... */ }
 
 download_release() {/* ... */ }
 
-install_version() {/* ... */ }</code></pre></div></div></div></section><section id="_téléchargement_dune_version" data-auto-animate><h2>Téléchargement d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/download</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
-download_release "$ASDF_INSTALL_VERSION" "$release_file"</code></pre></div></div></div></section><section id="_téléchargement_dune_version_2" data-auto-animate><h2>Téléchargement d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="5|7" data-lang="bash">download_release() {
- local version filename url
- version="$1"
- filename="$2"
- url="$GH_REPO/releases/download/v${version}/sops-$(get_platform)-$(get_arch)"
- echo "* Downloading $TOOL_NAME release $version..."
- curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
-}</code></pre></div></div></div></section><section id="_installation_dune_version_2" data-auto-animate><h2>Installation d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/install</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">chmod +x "$ASDF_DOWNLOAD_PATH/$TOOL_NAME"
-install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" \
-"$ASDF_INSTALL_PATH"</code></pre></div></div></div></section><section id="_installation_dune_version_3" data-auto-animate><h2>Installation d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="6,7,8" data-lang="bash">install_version() {
+install_version() {/* ... */ }</code></pre></div></div></div></section><section id="_téléchargement_dune_version" data-auto-animate><h2>Téléchargement d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/download</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">release_file="$ASDF_DOWNLOAD_PATH/$TOOL_NAME-$ASDF_INSTALL_VERSION.tar.gz"
+download_release "$ASDF_INSTALL_VERSION" "$release_file"
+tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1
+rm "$release_file"</code></pre></div></div></div></section><section id="_téléchargement_dune_version_2" data-auto-animate><h2>Téléchargement d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="9|10" data-lang="bash">download_release() {
+  local version filename url
+  version="$1"
+  filename="$2"
+  local platform=""
+  local arch=""
+  platform=$(get_platform)
+  arch=$(get_arch)
+  url="https://dl.google.com/go/go${version}.${platform}-${arch}.tar.gz"
+  curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
+}</code></pre></div></div></div></section><section id="_installation_dune_version_2" data-auto-animate><h2>Installation d&#8217;une version</h2><div class="slide-content"><div id="install_version" class="listingblock"><div class="title">bin/install</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">install_version "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p><a href="https://asdf-vm.com/plugins/create.html#environment-variables-overview" class="bare">https://asdf-vm.com/plugins/create.html#environment-variables-overview</a></p></div>
+<div class="paragraph"><p>ASDF_INSTALL_TYPE version / ref (tag ou pas)</p></div></aside></div></section><section id="_installation_dune_version_3" data-auto-animate><h2>Installation d&#8217;une version</h2><div class="slide-content"><div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="6,7,8,9" data-lang="bash">install_version() {
  local install_type="$1"
  local version="$2"
- local install_path="${3%/bin}/bin"
+ local install_path="${3%/bin}"
  mkdir -p "$install_path"
  cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
- test -x "$install_path/$TOOL_NAME" || fail \
-"Expected $install_path/$TOOL_NAME to be executable."
+ local tool_cmd
+ tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+ test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."
  echo "$TOOL_NAME $version installation was successful!"
 }</code></pre></div></div>
 <aside class="notes"><div class="paragraph"><p><a href="https://asdf-vm.com/plugins/create.html#environment-variables-overview" class="bare">https://asdf-vm.com/plugins/create.html#environment-variables-overview</a></p></div>
-<div class="paragraph"><p>ASDF_INSTALL_TYPE version / ref (tag ou pas)</p></div></aside></div></section><section id="_lister_toutes_les_versions"><h2>Lister toutes les versions</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/list-all</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">list_github_tags | sort_versions | xargs echo</code></pre></div></div>
-<div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="3,4,5,6,7|1" data-lang="bash">sort_versions() { /* regex magic */ }
+<div class="paragraph"><p>ASDF_INSTALL_TYPE version / ref (tag ou pas)</p></div></aside></div></section><section id="_lister_toutes_les_versions"><h2>Lister toutes les versions</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/list-all</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">list_all_versions | sort_versions</code></pre></div></div>
+<div class="listingblock"><div class="title">lib/utils.bash</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="4|1" data-lang="bash">sort_versions() { /* regex magic */ }
 
 list_github_tags() {
- git ls-remote --tags --refs "$GH_REPO" |
-  grep -o 'refs/tags/.*' | cut -d/ -f3- |
-  sed 's/^v//' # NOTE: You might want to adapt this sed to remove non-version strings from tags
-}</code></pre></div></div></div></section><section id="_dernière_version_stable"><h2>Dernière version stable</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/latest-stable</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">redirect_url=$(curl -sI "$GH_REPO/releases/latest" | \
-sed -n -e "s|^location: *||p" | sed -n -e "s|\r||p")</code></pre></div></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="4" data-lang="bash">$ curl "$GH_REPO/releases/latest"
-HTTP/2 302
-server: GitHub.com
-location: https://github.com/getsops/sops/releases/tag/v3.8.1</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>Si header location avec n° version présent, on prend ça comme latest, sinon on prend la première du <code>list-all</code></p></div></aside></div></section><section id="_besoin_de_plus" class="columns"><h2>Besoin de plus ?</h2><div class="slide-content"><div class="openblock column"><div class="content"><div class="imageblock"><img src="images/asdf_scripts_1.png" alt="scripts disponibles"></div></div></div>
+  git ls-remote --tags --refs "$GH_REPO" "go*"
+}</code></pre></div></div></div></section><section id="_dernière_version_stable"><h2>Dernière version stable</h2><div class="slide-content"><div class="listingblock"><div class="title">bin/latest-stable</div><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version' | cut -d "o" -f 2</code></pre></div></div>
+<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ curl -s https://go.dev/dl/?mode=json | jq
+[
+  {
+    "version": "go1.22.2",
+  # [...]
+  }
+]</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Si Github, possible de s&#8217;appuyer sur API github releases/latest</p></div>
+<div class="paragraph"><p>Si header location avec n° version présent, on prend ça comme latest, sinon on prend la première du <code>list-all</code></p></div></aside></div></section><section id="_besoin_de_plus" class="columns"><h2>Besoin de plus ?</h2><div class="slide-content"><div class="openblock column"><div class="content"><div class="imageblock"><img src="images/asdf_scripts_1.png" alt="scripts disponibles"></div></div></div>
 <div class="openblock column"><div class="content"><div class="imageblock"><img src="images/asdf_scripts_2.png" alt="scripts disponibles"></div>
 <div class="paragraph"><p><a href="https://asdf-vm.com/plugins/create.html#scripts-overview">Tous les scripts disponibles</a></p></div></div></div></div></section></section>
-<section id="_testons_ça" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Testons ça</h2><div class="slide-content">
-<div class="paragraph"><p><a href="https://github.com/sylvainmetayer/asdf-sops" class="bare">https://github.com/sylvainmetayer/asdf-sops</a></p></div>
-<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ ./2-plugin-demo.sh</code></pre></div></div></div></section>
+<section id="_testons_ça" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Testons ça &#8230;&#8203;?</h2><div class="slide-content">
+<div class="paragraph"><p><a href="https://github.com/sylvainmetayer/asdf-go" class="bare">https://github.com/sylvainmetayer/asdf-go</a></p></div>
+<div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">asdf plugin test go https://github.com/sylvainmetayer/asdf-go.git "go version"</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Le plugin go installé présenté dans la première démo est déjà ce plugin.</p></div>
+<div class="paragraph"><p>Présenter commande de test</p></div></aside></div></section>
 <section><section id="_gérer_vos_plugins_avec_un_plugin"><h2>Gérer vos plugins&#8230;&#8203; avec un plugin ?</h2><div class="slide-content"><div class="paragraph"><p><a href="https://github.com/asdf-community/asdf-plugin-manager" class="bare">https://github.com/asdf-community/asdf-plugin-manager</a></p></div><div class="imageblock"><img src="images/inception.webp" alt="Inception"></div></div></section><section id="_pourquoi" data-auto-animate><h2>Pourquoi ?</h2><div class="slide-content"><div class="openblock"><div class="title">En théorie</div><div class="content"><div class="imageblock"><img src="images/plugin-manager.svg" alt="Diagram"></div></div></div></div></section><section id="_pourquoi_2" data-auto-animate><h2>Pourquoi ?</h2><div class="slide-content"><div class="openblock"><div class="title">En pratique&#8230;&#8203;</div><div class="content"><div class="imageblock"><img src="images/plugin-manager-evil.svg" alt="Diagram"></div></div></div>
-<aside class="notes"><div class="ulist"><ul><li><p>Contrôle sur la provenance des plugins</p></li><li><p>Facilité d&#8217;installation des plugins pour usage interne</p></li><li><p>Maitrise des montées de versions</p></li></ul></div></aside></div></section><section id="_comment"><h2>Comment ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source">asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
+<aside class="notes"><div class="ulist"><ul><li><p>Contrôle sur la provenance des plugins</p></li><li><p>Facilité d&#8217;installation des plugins pour usage interne</p></li><li><p>Maitrise des montées de versions</p></li><li><p>Comme docker attention, ce n&#8217;est pas votre code qui tourne !!</p></li></ul></div></aside></div></section><section id="_comment"><h2>Comment ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source">asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
 asdf plugin update asdf-plugin-manager v1.3.1
 asdf install asdf-plugin-manager 1.3.1
 asdf global asdf-plugin-manager 1.3.1
 asdf-plugin-manager version</code></pre></div></div>
-<div class="paragraph"><p><a href="https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install" class="bare">https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install</a></p></div></div></section><section id="_plugin_versions"><h2>.plugin-versions</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source"># plugin-name  git-url                               git-ref (hash, tag, or branch)
-sops           https://github.com/feniix/asdf-sops   master</code></pre></div></div></div></section><section id="_usage" data-auto-animate><h2>Usage</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source">asdf-plugin-manager add &lt;plugin-name&gt;
+<div class="paragraph"><p><a href="https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install" class="bare">https://github.com/asdf-community/asdf-plugin-manager?tab=readme-ov-file#install</a></p></div>
+<div class="quoteblock"><blockquote><div class="paragraph"><p>[&#8230;&#8203;] the only plugin you need to validate manually, and the .plugin-versions file will be the source of truth for asdf plugins. Yes, this is an asdf plugin to manage asdf plugins!</p></div></blockquote></div></div></section><section id="_plugin_versions"><h2>.plugin-versions</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source"># plugin-name  git-url                               git-ref (hash, tag, or branch)
+go       https://github.com/sylvainmetayer/asdf-go   main</code></pre></div></div></div></section><section id="_usage" data-auto-animate><h2>Usage</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-source hljs" data-noescape="true" data-line-numbers="" data-lang="source">asdf-plugin-manager add &lt;plugin-name&gt;
 asdf-plugin-manager add-all
 
 asdf-plugin-manager update &lt;plugin-name&gt;
