@@ -20,14 +20,16 @@
     letter-spacing: normal;
 }
 
-.reveal section.title h1+.preamble > .paragraph > p {
+.reveal section.title h1 + .preamble > .paragraph > p {
     color: white;
     font-size: 50px;
     font-weight: 700;
     letter-spacing: normal;
 }
 
-.reveal section #install_version {
+.reveal section #install_version,
+.reveal section #demo_plugin,
+.reveal section #latest_stable {
     width: 110%;
 }
 
@@ -50,7 +52,7 @@ body::after {
     color: white;
 }
 
-.reveal section h1+div.preamble>div.paragraph>p {
+.reveal section h1 + div.preamble > div.paragraph > p {
     color: white;
 }
 
