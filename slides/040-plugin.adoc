@@ -91,6 +91,11 @@ tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1
 rm "$release_file"
 ----
 
+[.speaker]
+****
+- Décompresser !!!!!!
+****
+
 [%auto-animate]
 === Téléchargement d'une version
 
@@ -112,8 +117,6 @@ download_release() {
 
 [%auto-animate]
 === Installation d'une version
-
-// TODO Mettre un id ici et un width dans le css à 150% pour avoir toute la ligne
 
 [%linenums,bash,id=install_version]
 .bin/install
@@ -219,11 +222,6 @@ link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts d
 image::devoxx/DevoxxFR2024_0053.jpg[background,size=fill]
 
 <https://github.com/sylvainmetayer/asdf-go>
-
-// [%linenums,bash]
-// ----
-// $ ./2-plugin-demo.sh
-// ----
 
 [%linenums,bash,id=demo_plugin]
 ----

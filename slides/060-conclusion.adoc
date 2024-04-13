@@ -11,7 +11,7 @@ https://mise.jdx.dev/
 https://devenv.sh
 ****
 
-[.columns.transparency%notitle]
+[.columns.transparency%notitle.is-vcentered]
 == !
 
 image::devoxx/DevoxxFR2024_0004.jpg[background, size=fill]
@@ -19,8 +19,13 @@ image::devoxx/DevoxxFR2024_0004.jpg[background, size=fill]
 [.column]
 --
 [caption=]
-.https://asdf.talks.sylvain.dev
+.Slides
 image::slides_link.svg[height=300,alt='Slides']
+--
+
+[.column]
+--
+link:https://sylvain.dev[*sylvain.dev*]
 --
 
 [.column]

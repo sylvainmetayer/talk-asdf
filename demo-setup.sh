@@ -4,6 +4,7 @@ echo "Silent mode is on?"
 echo "Lance le script clean.sh"
 echo "T'as coupé le son ??"
 echo "Zoom depuis gnome-terminal : ctrl+p ctrl+m"
+echo "T'as lancé le start.sh sur ta démo ?"
 read -r
 
 echo "Battery saver"
