@@ -56,12 +56,12 @@ pe "bat .tool-versions"
 pe "bat .plugin-versions"
 wait
 clear
-pe "asdf-plugin-manager add go"
-pe "asdf-plugin-manager export"
-wait clear
-
-p "⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️   "
-pe "echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc"
+#pe "asdf-plugin-manager add go"
+#pe "asdf-plugin-manager export"
+#wait clear
+#
+#p "⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️   "
+#pe "echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc"
 export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true
 
 pe "asdf-plugin-manager add go"

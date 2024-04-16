@@ -8,9 +8,8 @@ echo "T'as lancé le start.sh sur ta démo ?"
 read -r
 
 echo "Battery saver"
-#sudo systemctl stop docker.service
-#sudo systemctl stop cbagentd.service
-#sudo systemctl stop forticlient.service
+sudo systemctl stop cbagentd.service
+sudo systemctl stop forticlient.service
 
 kubectx -u || true
 

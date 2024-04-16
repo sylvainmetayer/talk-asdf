@@ -44,12 +44,3 @@ p "Ah oui, il faut installer la version d'abord !"
 
 pe "asdf install"
 pei "go run main.go"
-
-p "Et maintenant, testons sur un autre code, sans contrainte particulière"
-
-cd ../go-new
-
-pei "ls -ail"
-p "Pas de .tool-versions ici, on utilise alors la version globale située dans ~/.tool-versions"
-pe "asdf current go"
-pe "go run main.go"

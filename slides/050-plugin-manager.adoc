@@ -68,15 +68,15 @@ asdf-plugin-manager remove <plugin-name>
 asdf-plugin-manager remove-all
 ----
 
-[%auto-animate]
-=== Usage
-
-// TODO Est-ce que je dois mettre ma propre issue ??
-
-[WARNING]
-https://github.com/asdf-community/asdf-plugin-manager/issues/48
-
-`echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc`
+// [%auto-animate]
+// === Usage
+//
+// // TODO Est-ce que je dois mettre ma propre issue ??
+//
+// [WARNING]
+// https://github.com/asdf-community/asdf-plugin-manager/issues/48
+//
+// `echo 'export ASDF_PLUGIN_MANAGER_ADD_CLEAN=true' >> ~/.bashrc`
 
 [.transparency]
 === Démo
@@ -85,5 +85,5 @@ image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 [source,bash]
 ----
-./3-plugin-manager-demo.sh
+./2-plugin-manager-demo.sh
 ----
