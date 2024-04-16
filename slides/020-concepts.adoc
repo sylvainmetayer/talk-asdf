@@ -102,19 +102,3 @@ Ces scripts sont des wrappers qui permettent de déterminer dynamiquement (selon
 Ensuite, le binaire est appelé depuis le dossier ~/.asdf/install/<tool>/<version>/bin/<bin>
 C'est SHIIIIIIIIIIIIMS pas shym
 ****
-
-[.transparency]
-=== Mise à jour d'asdf
-
-image::devoxx/DevoxxFR2024_0030.jpg[background, size=cover]
-
-[source,bash]
-----
-asdf update
-----
-
-[.notes]
-****
-- Met à jour vers la dernière version stable d'asdf (dernière version tag)
-- Permet d'avoir accès au bugfix / nouvelles fonctionnalités /...
-****
