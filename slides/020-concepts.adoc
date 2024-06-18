@@ -58,8 +58,6 @@ asdf install
 
 === Local vs Global
 
-// image::devoxx/DevoxxFR2024_0048.jpg[background, size=cover]
-
 [source,text]
 ----
 ~/

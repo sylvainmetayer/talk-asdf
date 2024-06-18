@@ -20,6 +20,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	colored := fmt.Sprintf("\x1b[%dm%s\x1b[0m", 32, "Hello, DevoxxFR ! Go version :"+current)
+	colored := fmt.Sprintf("\x1b[%dm%s\x1b[0m", 32, "Hello, Breizh Camp ! Go version :"+current)
 	log.Println(colored)
 }
