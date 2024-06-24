@@ -42,7 +42,7 @@
 }
 
 body::after {
-    content: url("../images/breizhcamp/logo_text.png");
+    content: url("../images/breizhcamp/logo.png");
     position: fixed;
     left: 0;
     bottom: 10px;

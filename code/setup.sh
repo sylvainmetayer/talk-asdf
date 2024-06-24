@@ -4,7 +4,7 @@
 
 # pre-download release file
 ASDF_GO_DEMO_DOWNLOADED_RELEASES_DIRECTORY=/opt/asdf-demo-src/
-for VERSION in "1.16.15" "1.22.2"
+for VERSION in "1.16.15" "1.22.4"
 do
     echo "pre-download go tar.gz version $VERSION"
     curl -sL -o $ASDF_GO_DEMO_DOWNLOADED_RELEASES_DIRECTORY/$VERSION.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz

@@ -186,7 +186,7 @@ curl -s https://go.dev/dl/?mode=json | jq -r '.[0].version' | cut -d "o" -f 2
 $ curl -s https://go.dev/dl/?mode=json | jq
 [
   {
-    "version": "go1.22.2",
+    "version": "go1.22.4",
   # [...]
   }
 ]

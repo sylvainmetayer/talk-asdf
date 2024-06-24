@@ -6,7 +6,8 @@ reveal.js/
 *.html
 .asciidoctor
 !index-docinfo-footer.html
-js/hightlight.min.js
+js/highlight/
+!js/highlight/.gitkeep
 code/age.key
 code/*.secrets.yaml
 code/recipients/secrets.*.yaml
@@ -18,3 +19,4 @@ code/demo-magic.sh
 images/plugin-manager-evil.svg
 images/plugin-manager.svg
 
+highlight.js/

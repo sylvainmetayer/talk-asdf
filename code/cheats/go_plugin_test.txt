@@ -2,5 +2,5 @@ Location of go plugin: /tmp/asdf.T20M/plugins/go
 Updating go to main
 Déjà sur 'main'
 Votre branche est à jour avec 'origin/main'.
-go 1.22.2 installation was successful!
-go version go1.22.2 linux/amd64
+go 1.22.4 installation was successful!
+go version go1.22.4 linux/amd64

@@ -13,10 +13,10 @@ entity    GitHub    as github order 100 #green
 user -> asdf: asdf plugin-add go
 user -> asdf: asdf install go latest
 asdf -> plugin: list-latest-stable
-plugin -> asdf: 1.22.2
-asdf -> plugin : download 1.22.2
+plugin -> asdf: 1.22.4
+asdf -> plugin : download 1.22.4
 plugin -> plugin_script
-plugin_script -> github: Download go 1.22.2
+plugin_script -> github: Download go 1.22.4
 plugin_script -> plugin_script: move go to\n $ASDF_INSTALL_PATH
 plugin_script -> plugin: OK
 plugin -> asdf: OK

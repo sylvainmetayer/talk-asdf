@@ -13,7 +13,7 @@ link:https://github.com/asdf-vm/asdf-plugins[https://github.com/asdf-vm/asdf-plu
 
 image::community.png[width=500,alt="ASDF community plugin"]
 
-link:https://sops.talks.sylvain.dev[Instant Pub 🗞️]
+link:https://r.sylvain.dev/breizhcamp-2024-sops[Instant Pub 🗞️]
 --
 
 [.notes]
