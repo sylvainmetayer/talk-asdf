@@ -414,21 +414,22 @@ ul.byline li + li {
   margin-top: 0.25em;
 }
 </style><link rel="stylesheet" href="css/meetup.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title" data-background-size="fill" data-background-image="images/devoxx/DevoxxFR2024_0034.jpg"><h1>asdf, un outil pour toutes vos versions</h1><div class="preamble"><div class="paragraph"><p>@sylvain_metayer</p></div></div></section>
-<section id="_présentation" class="columns is-vcentered transparency" data-background-image="images/devoxx/DevoxxFR2024_0024.jpg" data-background-size="fill"><div class="slide-content">
+<section id="_présentation" class="columns is-vcentered transparency" data-background-image="images/devoxx/DevoxxFR2024_0034.jpg" data-background-size="fill"><div class="slide-content">
 <div class="openblock column is-one-third"><div class="content"><div class="imageblock"><img src="images/photo.png" alt="photo"></div></div></div>
 <div class="openblock column is-3 has-text-left medium"><div class="content"><div class="paragraph"><p>Sylvain MÉTAYER</p></div>
 <div class="paragraph"><p><a href="https://sylvain.dev" class="bare">https://sylvain.dev</a></p></div>
-<div class="paragraph"><p>Tech Lead <a href="https://www.groupeonepoint.com/fr/">@Onepoint</a></p></div></div></div>
-<div class="openblock column"><div class="content"><div class="paragraph vertical-align-middle"><p><span class="image"><img src="images/logo.png" alt="logo" width="250"></span></p></div>
-<div class="imageblock"><img src="images/qualiopi.png" alt="qualiopi"></div></div></div>
-<aside class="notes"><div class="paragraph"><p>Conteneur / k8s quotidien, outils cloud évoluent rapidement et sont nombreux</p></div></aside></div></section>
+<div class="paragraph"><p>Tech Lead <a href="https://www.groupeonepoint.com/fr/">@Onepoint</a></p></div>
+<div class="paragraph"><p><span class="image"><img src="images/logo.png" alt="logo" width="250"></span></p></div></div></div>
+<div class="openblock column"><div class="content"><div class="imageblock vertical-align-middle"><img src="images/qualiopi.png" alt="qualiopi"></div>
+<div class="imageblock"><img src="images/ecole_onepoint.svg" alt="ecole onepoint" height="200"></div></div></div>
+<aside class="notes"><div class="paragraph"><p>Conteneur / k8s quotidien, stocke/interagit secrets appli</p></div></aside></div></section>
 <section id="_problématique"><h2>Problématique</h2><div class="slide-content"><div class="openblock column"><div class="content"><div class="videoblock"><div class="title">There are so many of them&#8230;&#8203;</div><video src="images/so_many_of_them_lotr.mp4" width="1200" height="100%" data-autoplay controls loop>Your browser does not support the video tag.</video></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Côté devops, et programmation de manières générale, pleins d&#8217;outils qui évolue parfois vite, avec autant d&#8217;outils que de distribution linux.</p></div>
 <div class="paragraph"><p>Et on se retrouve avec des projets qui suivent niveau versions et d&#8217;autres qui restent sur des vieilles versions.</p></div>
 <div class="paragraph"><p>Et il faut pourtant utiliser les 2</p></div></aside></div></section>
 <section id="_contexte" class="columns transparency" data-background-image="images/devoxx/DevoxxFR2024_0053.jpg" data-background-size="fill"><h2>Contexte</h2><div class="slide-content">
 <div class="openblock column context_success"><div class="content"><div class="paragraph"><p>$ go run main.go</p></div>
-<div class="paragraph"><p>Hello, Breizh Camp ! Go version :1.22.2</p></div></div></div>
+<div class="paragraph"><p>Hello, Breizh Camp ! Go version :1.22.4</p></div></div></div>
 <div class="openblock column context_error fragment"><div class="content"><div class="paragraph"><p>$ go run main.go</p></div>
 <div class="paragraph"><p>Need go version between 1.16.0 and 1.16.15</p></div>
 <div class="paragraph"><p>exit status 1</p></div></div></div></div></section>
@@ -440,7 +441,7 @@ echo . "$HOME/.asdf/asdf.sh" &gt; ~/.bashrc
 echo . "$HOME/.asdf/completions/asdf.bash" &gt; ~/.bashrc</code></pre></div></div></div></section><section id="_plugins" class="columns"><h2>Plugins</h2><div class="slide-content"><div class="openblock column is-one-fifths"><div class="content"><div class="paragraph"><p><code>asdf plugin-add &lt;plugin-name&gt; &lt;optional-repo-url&gt;</code></p></div></div></div>
 <div class="openblock column fragment is-four-fifths"><div class="content"><div class="paragraph"><p><a href="https://github.com/asdf-vm/asdf-plugins">https://github.com/asdf-vm/asdf-plugins : +750 plugins</a></p></div>
 <div class="imageblock"><img src="images/community.png" alt="ASDF community plugin" width="500"></div>
-<div class="paragraph"><p><a href="https://sops.talks.sylvain.dev">Instant Pub 🗞️</a></p></div></div></div>
+<div class="paragraph"><p><a href="https://r.sylvain.dev/breizhcamp-2024-sops">Instant Pub 🗞️</a></p></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Permet l&#8217;installation d&#8217;un plugin pour gérer les versions d&#8217;un outil.</p></div>
 <div class="paragraph"><p>Plugin Shortname Index</p></div>
 <div class="paragraph"><p><a href="https://asdf-vm.com/plugins/create.html#plugin-shortname-index" class="bare">https://asdf-vm.com/plugins/create.html#plugin-shortname-index</a></p></div></aside></div></section><section id="_tool_versions" class="transparency" data-background-image="images/devoxx/DevoxxFR2024_0058.jpg" data-background-size="cover"><h2>.tool-versions</h2><div class="slide-content">
@@ -544,7 +545,7 @@ list_all_versions() {
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-line-numbers="" data-lang="bash">$ curl -s https://go.dev/dl/?mode=json | jq
 [
   {
-    "version": "go1.22.2",
+    "version": "go1.22.4",
   # [...]
   }
 ]</code></pre></div></div>
@@ -805,8 +806,8 @@ Reveal.addEventListener('ready', function () {
 });
 Reveal.addEventListener('resize', function () {
   layoutSlideContents(1200, 700)
-});</script><link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css"/>
-<script src="js/highlight.min.js"></script>
+});</script><link rel="stylesheet" href="js/highlight/styles/base16/solarized-light.min.css"/>
+<script src="js/highlight/highlight.min.js"></script>
 
 <script>
 
