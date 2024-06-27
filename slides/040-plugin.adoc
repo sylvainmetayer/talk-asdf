@@ -1,7 +1,7 @@
 [.transparency]
 == Création d'un plugin en moins de 10min
 
-image::devoxx/DevoxxFR2024_0046.jpg[background,size=fill]
+// image::devoxx/DevoxxFR2024_0046.jpg[background,size=fill]
 
 image::clock_2.png[alt='Vite, vite !',width=40%]
 
@@ -217,7 +217,7 @@ link:https://asdf-vm.com/plugins/create.html#scripts-overview[Tous les scripts d
 [.transparency]
 == Testons ça ...?
 
-image::devoxx/DevoxxFR2024_0053.jpg[background,size=fill]
+// image::devoxx/DevoxxFR2024_0053.jpg[background,size=fill]
 
 <https://github.com/sylvainmetayer/asdf-go>
 

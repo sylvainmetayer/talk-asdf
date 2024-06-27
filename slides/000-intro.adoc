@@ -22,7 +22,7 @@ Et il faut pourtant utiliser les 2
 [.columns.transparency]
 == Contexte
 
-image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
+// image::devoxx/DevoxxFR2024_0053.jpg[background, size=fill]
 
 [.column.context_success]
 --
@@ -37,7 +37,7 @@ include::../code/0-go-old.txt[]
 [.transparency]
 == Solution
 
-image::devoxx/DevoxxFR2024_0011.jpg[background, size=fill]
+// image::devoxx/DevoxxFR2024_0011.jpg[background, size=fill]
 
 image::asdf.png[alt='']
 

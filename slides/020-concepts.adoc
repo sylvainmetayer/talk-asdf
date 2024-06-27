@@ -28,7 +28,7 @@ https://asdf-vm.com/plugins/create.html#plugin-shortname-index
 [.transparency]
 === .tool-versions
 
-image::devoxx/DevoxxFR2024_0058.jpg[background, size=cover]
+// image::devoxx/DevoxxFR2024_0058.jpg[background, size=cover]
 
 
 [source,shell]
@@ -47,7 +47,7 @@ go 1.16.15
 [.transparency]
 === Installation d'une version
 
-image::devoxx/DevoxxFR2024_0035.jpg[background, size=cover]
+// image::devoxx/DevoxxFR2024_0035.jpg[background, size=cover]
 
 [source,shell]
 ----

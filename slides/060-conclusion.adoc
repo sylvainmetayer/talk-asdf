@@ -1,7 +1,7 @@
 [.transparency]
 == Pour aller plus loin
 
-image::devoxx/DevoxxFR2024_0044.jpg[background, size=fill]
+// image::devoxx/DevoxxFR2024_0044.jpg[background, size=fill]
 
 <https://asdf-vm.com/>
 

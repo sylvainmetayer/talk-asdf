@@ -1,7 +1,7 @@
 [.transparency]
 == Installation
 
-image::devoxx/DevoxxFR2024_0023.jpg[background, size=cover]
+// image::devoxx/DevoxxFR2024_0023.jpg[background, size=cover]
 
 https://asdf-vm.com/guide/getting-started.html
 

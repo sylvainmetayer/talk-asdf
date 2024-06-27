@@ -1,7 +1,7 @@
 [%notitle.columns.is-vcentered.transparency]
 == Présentation
 
-image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
+// image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
 
 [.column.is-one-third]
 --
