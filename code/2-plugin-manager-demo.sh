@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source ./.demo-magic.sh -d || exit 1
+export BAT_THEME="GitHub"
 
 # Need to ensure go plugin is uninstalled for this demo
 asdf plugin remove go 2>/dev/null || true

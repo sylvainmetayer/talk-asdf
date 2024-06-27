@@ -5,6 +5,8 @@ clear
 
 source ~/.bashrc
 
+export BAT_THEME="GitHub"
+
 echo "Installation du plugin go"
 
 p 'asdf plugin add go'
