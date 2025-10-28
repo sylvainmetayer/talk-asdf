@@ -1,5 +1,5 @@
 # docker build -t ghcr.io/sylvainmetayer/talk-asdf .
-FROM node:22-bookworm
+FROM node:24-bookworm
 
 # https://www.ivarch.com/programs/pv.shtml
 
